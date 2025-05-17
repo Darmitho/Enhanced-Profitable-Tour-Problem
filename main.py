@@ -31,7 +31,9 @@ if __name__ == "__main__":
         initial_solution = f.generate_solution(instance_data, user_data)
         initial_solutions.append(initial_solution)
 
-        improved_solution = f.hill_climbing(initial_solution, instance_data, user_data)
+        #Hill Climbing
+        selected_moves = [f.insert_move, f.remove_move, f.swap_move]
+        improved_solution = f.hill_climbing(initial_solution, instance_data, user_data, selected_moves)
         
         #print(f"  Tiempo usado: {improved_solution.totalTimeUsed}")
         print(f"Valor/Puntaje final del Tour: {improved_solution.totalScore}")

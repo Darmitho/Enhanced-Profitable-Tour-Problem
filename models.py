@@ -39,6 +39,6 @@ class Solution:
         -totalScore: Puntaje total de la solución (Integer).
         -totalTimeUsed: Tiempo total de la solución (Integer).
     """
-    orderVisitedNodes: np.ndarray
+    orderNodesVisited: np.ndarray
     totalScore: int
     totalTimeUsed: int

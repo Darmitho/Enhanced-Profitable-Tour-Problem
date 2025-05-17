@@ -1,6 +1,6 @@
 import numpy as np
 from dataclasses import dataclass
-from typing import List
+from typing import Callable, Tuple, List
 import sys
 from models import UserData, InstanceData, Solution
 
@@ -43,11 +43,11 @@ def read_user_data_file(filename: str, num_nodes: int) -> List[UserData]:
     """
     Lee un archivo con datos de usuarios y construye una lista de UserData.
 
-    Argumentos:
+    Args:
     - filename: Ruta del archivo de usuarios.
     - num_nodes: Número de nodos (tamaño de las matrices esperadas).
 
-    Retorna:
+    Return:
     - Lista de instancias de UserData.
     """
     try:
@@ -94,25 +94,15 @@ def read_user_data_file(filename: str, num_nodes: int) -> List[UserData]:
         print(f"Error al leer el archivo de usuarios: {e}")
         sys.exit(1)
 
-from dataclasses import dataclass
-from typing import List
-import numpy as np
-
-@dataclass
-class Solution:
-    orderNodesVisited: List[int]
-    totalScore: int
-    totalTimeUsed: int
-
 def search_node(node: int, order_nodes_visited: List[int]) -> bool:
     """
     Verifica si un nodo ya fue visitado.
 
-    Argumentos:
+    Args:
     - node: nodo a verificar.
     - order_nodes_visited: lista de nodos ya visitados.
 
-    Retorna:
+    Return:
     - True si el nodo ya está en la lista, False si no.
     """
     return node in order_nodes_visited
@@ -121,11 +111,11 @@ def generate_solution(instance_data: InstanceData, user_data: UserData) -> Solut
     """
     Genera una solución inicial greedy basada en eficiencia de puntuación-tiempo.
 
-    Argumentos:
+    Args:
     - instance_data: datos del grafo.
     - user_data: preferencias de un usuario.
 
-    Retorna:
+    Return:
     - Instancia de Solution con el recorrido inicial.
     """
     solution = Solution(orderNodesVisited=[0],
@@ -202,12 +192,12 @@ def calculate_score_and_time(instance_data: InstanceData, user_data: UserData, o
     """
     Calcula el tiempo total y la puntuación total de una solución, y verifica restricciones.
 
-    Argumentos:
+    Args:
     - instance_data: instancia del grafo
     - user_data: datos de un usuario
     - order_nodes_visited: recorrido propuesto
 
-    Retorna:
+    Return:
     - [tiempo_total, puntuacion_total], o [MAX_INT, -1] si hay arcos no conectados.
     """
     total_time = 0
@@ -239,17 +229,116 @@ def calculate_score_and_time(instance_data: InstanceData, user_data: UserData, o
     return [total_time, total_score]
 
 
-def hill_climbing(solution: Solution, instance_data: InstanceData, user_data: UserData) -> Solution:
+def insert_move(route: List[int], instance_data: InstanceData, user_data: UserData,
+                best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
     """
-    Mejora una solución utilizando Hill Climbing con estrategia de mejor mejora.
+    Realiza un movimiento de inserción de un nodo en la ruta.
 
-    Argumentos:
-    - solution: solución inicial
-    - instance_data: datos del grafo
-    - user_data: preferencias del usuario
+    Args:
+    - route: ruta actual.
+    - instance_data: datos del grafo.
+    - user_data: preferencias del usuario.
+    - best_score: mejor puntuación encontrada.
+    - best_time: mejor tiempo encontrado.
+    - best_move_found: indica si se encontró un movimiento mejor.
+    - best_route: mejor ruta encontrada.
 
-    Retorna:
-    - Solución mejorada o la misma si no hay mejoras.
+    Return:
+    - mejor ruta, mejor puntuación, mejor tiempo, si se encontró un movimiento mejor.
+    """
+    best_route = route
+    best_move_found = False
+
+    for i in range(1, len(route)):
+        for node in range(instance_data.numNodes):
+            if node not in route:
+                new_route = route[:i] + [node] + route[i:]
+                new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
+                if new_score > best_score and new_time <= user_data.totalTime:
+                    best_score = new_score
+                    best_time = new_time
+                    best_route = new_route
+                    best_move_found = True
+    return best_route, best_score, best_time, best_move_found
+
+
+def remove_move(route: List[int], instance_data: InstanceData, user_data: UserData,
+                best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+    """
+    Realiza un movimiento de eliminación de un nodo en la ruta.
+
+    Args:
+    - route: ruta actual.
+    - instance_data: datos del grafo.
+    - user_data: preferencias del usuario.
+    - best_score: mejor puntuación encontrada.
+    - best_time: mejor tiempo encontrado.
+    - best_move_found: indica si se encontró un movimiento mejor.
+    - best_route: mejor ruta encontrada.
+
+    Return:
+    - mejor ruta, mejor puntuación, mejor tiempo, si se encontró un movimiento mejor.
+    """
+    best_route = route
+    best_move_found = False
+
+    for i in range(1, len(route)):
+        new_route = route[:i] + route[i+1:]
+        new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
+        if new_score > best_score and new_time <= user_data.totalTime:
+            best_score = new_score
+            best_time = new_time
+            best_route = new_route
+            best_move_found = True
+    return best_route, best_score, best_time, best_move_found
+
+
+def swap_move(route: List[int], instance_data: InstanceData, user_data: UserData,
+              best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+    """
+    Realiza un movimiento de intercambio entre dos nodos en la ruta.
+
+    Args:
+    - route: ruta actual.
+    - instance_data: datos del grafo.
+    - user_data: preferencias del usuario.
+    - best_score: mejor puntuación encontrada.
+    - best_time: mejor tiempo encontrado.
+    - best_move_found: indica si se encontró un movimiento mejor.
+    - best_route: mejor ruta encontrada.
+
+    Return:
+    - mejor ruta, mejor puntuación, mejor tiempo, si se encontró un movimiento mejor.
+    """
+    best_route = route
+    best_move_found = False
+
+    for i in range(1, len(route)):
+        for j in range(i + 1, len(route)):
+            new_route = route[:]
+            new_route[i], new_route[j] = new_route[j], new_route[i]
+            new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
+            if new_score > best_score and new_time <= user_data.totalTime:
+                best_score = new_score
+                best_time = new_time
+                best_route = new_route
+                best_move_found = True
+    return best_route, best_score, best_time, best_move_found
+
+
+
+def hill_climbing(solution: Solution, instance_data: InstanceData, user_data: UserData, moves: List[Callable]) -> Solution:
+    """
+    Ejecuta Hill Climbing con las funciones de movimiento especificadas.
+
+    Args:
+    - solution: solución inicial.
+    - instance_data: datos del grafo.
+    - user_data: preferencias del usuario.
+    - moves: lista de funciones de movimiento a aplicar.
+
+    Return:
+    - Solución mejorada.
     """
     improved = True
     while improved:
@@ -261,42 +350,18 @@ def hill_climbing(solution: Solution, instance_data: InstanceData, user_data: Us
 
         best_score = current_score
         best_time = current_time
-        best_route = current_route[:]
+        best_route = current_route
         best_move_found = False
 
-        # INSERT
-        for i in range(1, len(current_route)):
-            for node in range(instance_data.numNodes):
-                if node not in current_route:
-                    new_route = current_route[:i] + [node] + current_route[i:]
-                    new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
-                    if new_score > best_score and new_time <= user_data.totalTime:
-                        best_score = new_score
-                        best_time = new_time
-                        best_route = new_route
-                        best_move_found = True
-
-        # REMOVE
-        for i in range(1, len(current_route)):
-            new_route = current_route[:i] + current_route[i+1:]
-            new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
-            if new_score > best_score and new_time <= user_data.totalTime:
-                best_score = new_score
-                best_time = new_time
-                best_route = new_route
+        for move in moves:
+            candidate_route, candidate_score, candidate_time, move_found = move(
+                current_route, instance_data, user_data, best_score, best_time
+            )
+            if move_found and candidate_score > best_score:
+                best_score = candidate_score
+                best_time = candidate_time
+                best_route = candidate_route
                 best_move_found = True
-
-        # SWAP
-        for i in range(1, len(current_route)):
-            for j in range(i + 1, len(current_route)):
-                new_route = current_route[:]
-                new_route[i], new_route[j] = new_route[j], new_route[i]
-                new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
-                if new_score > best_score and new_time <= user_data.totalTime:
-                    best_score = new_score
-                    best_time = new_time
-                    best_route = new_route
-                    best_move_found = True
 
         if best_move_found:
             improved = True
