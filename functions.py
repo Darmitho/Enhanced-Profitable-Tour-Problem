@@ -230,7 +230,8 @@ def calculate_score_and_time(instance_data: InstanceData, user_data: UserData, o
 
 
 def insert_move(route: List[int], instance_data: InstanceData, user_data: UserData,
-                best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+                best_score: int, best_time: int, first_improvement: bool = False
+               ) -> Tuple[List[int], int, int, bool]:
     """
     Realiza un movimiento de inserción de un nodo en la ruta.
 
@@ -259,11 +260,14 @@ def insert_move(route: List[int], instance_data: InstanceData, user_data: UserDa
                     best_time = new_time
                     best_route = new_route
                     best_move_found = True
+                    if first_improvement:
+                        return best_route, best_score, best_time, True
     return best_route, best_score, best_time, best_move_found
 
 
 def remove_move(route: List[int], instance_data: InstanceData, user_data: UserData,
-                best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+                best_score: int, best_time: int, first_improvement: bool = False
+               ) -> Tuple[List[int], int, int, bool]:
     """
     Realiza un movimiento de eliminación de un nodo en la ruta.
 
@@ -290,11 +294,14 @@ def remove_move(route: List[int], instance_data: InstanceData, user_data: UserDa
             best_time = new_time
             best_route = new_route
             best_move_found = True
+            if first_improvement:
+                return best_route, best_score, best_time, True
     return best_route, best_score, best_time, best_move_found
 
 
 def swap_move(route: List[int], instance_data: InstanceData, user_data: UserData,
-              best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+                best_score: int, best_time: int, first_improvement: bool = False
+               ) -> Tuple[List[int], int, int, bool]:
     """
     Realiza un movimiento de intercambio entre dos nodos en la ruta.
 
@@ -323,11 +330,14 @@ def swap_move(route: List[int], instance_data: InstanceData, user_data: UserData
                 best_time = new_time
                 best_route = new_route
                 best_move_found = True
+                if first_improvement:
+                    return best_route, best_score, best_time, True
     return best_route, best_score, best_time, best_move_found
 
 
 def two_opt_move(route: List[int], instance_data: InstanceData, user_data: UserData,
-                 best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+                best_score: int, best_time: int, first_improvement: bool = False
+               ) -> Tuple[List[int], int, int, bool]:
     best_route = route
     best_move_found = False
 
@@ -340,11 +350,14 @@ def two_opt_move(route: List[int], instance_data: InstanceData, user_data: UserD
                 best_time = new_time
                 best_route = new_route
                 best_move_found = True
+                if first_improvement:
+                    return best_route, best_score, best_time, True
     return best_route, best_score, best_time, best_move_found
 
 
 def move_node_forward(route: List[int], instance_data: InstanceData, user_data: UserData,
-                      best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+                best_score: int, best_time: int, first_improvement: bool = False
+               ) -> Tuple[List[int], int, int, bool]:
     best_route = route
     best_move_found = False
 
@@ -359,11 +372,14 @@ def move_node_forward(route: List[int], instance_data: InstanceData, user_data: 
                 best_time = new_time
                 best_route = new_route
                 best_move_found = True
+                if first_improvement:
+                    return best_route, best_score, best_time, True
     return best_route, best_score, best_time, best_move_found
 
 
 def move_node_backward(route: List[int], instance_data: InstanceData, user_data: UserData,
-                       best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+                best_score: int, best_time: int, first_improvement: bool = False
+               ) -> Tuple[List[int], int, int, bool]:
     best_route = route
     best_move_found = False
 
@@ -378,11 +394,14 @@ def move_node_backward(route: List[int], instance_data: InstanceData, user_data:
                 best_time = new_time
                 best_route = new_route
                 best_move_found = True
+                if first_improvement:
+                    return best_route, best_score, best_time, True
     return best_route, best_score, best_time, best_move_found
 
 
 def replace_node(route: List[int], instance_data: InstanceData, user_data: UserData,
-                 best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+                best_score: int, best_time: int, first_improvement: bool = False
+               ) -> Tuple[List[int], int, int, bool]:
     best_route = route
     best_move_found = False
 
@@ -397,12 +416,14 @@ def replace_node(route: List[int], instance_data: InstanceData, user_data: UserD
                     best_time = new_time
                     best_route = new_route
                     best_move_found = True
+                    if first_improvement:
+                        return best_route, best_score, best_time, True
     return best_route, best_score, best_time, best_move_found
 
 
 
 
-def hill_climbing(solution: Solution, instance_data: InstanceData, user_data: UserData, moves: List[Callable]) -> Solution:
+def hill_climbing(solution: Solution, instance_data: InstanceData, user_data: UserData, moves: List[Callable]) -> Tuple[Solution, List[str]]:
     """
     Ejecuta Hill Climbing con las funciones de movimiento especificadas.
 
@@ -416,6 +437,8 @@ def hill_climbing(solution: Solution, instance_data: InstanceData, user_data: Us
     - Solución mejorada.
     """
     improved = True
+    list_moves_found = []
+    best_move = None
     while improved:
         improved = False
 
@@ -437,11 +460,44 @@ def hill_climbing(solution: Solution, instance_data: InstanceData, user_data: Us
                 best_time = candidate_time
                 best_route = candidate_route
                 best_move_found = True
+                best_move = move.__name__
 
         if best_move_found:
             improved = True
             solution.totalScore = best_score
             solution.totalTimeUsed = best_time
             solution.orderNodesVisited = best_route
+            list_moves_found.append(best_move)
+            
 
-    return solution
+    return solution, list_moves_found
+
+
+def hill_climbing_first_improvement(solution: Solution, instance_data: InstanceData, user_data: UserData, moves: List[Callable]) -> Tuple[Solution, List[str]]:
+    """
+    Algoritmo Hill Climbing usando alguna mejora (first improvement).
+
+    Retorna la primera mejora encontrada por los movimientos dados.
+    """
+    improved = True
+    list_moves_found = []
+    while improved:
+        improved = False
+
+        current_score = solution.totalScore
+        current_time = solution.totalTimeUsed
+        current_route = solution.orderNodesVisited[:]
+
+        for move in moves:
+            new_route, new_score, new_time, move_found = move(
+                current_route, instance_data, user_data, current_score, current_time, first_improvement=True
+            )
+            if move_found:
+                solution.totalScore = new_score
+                solution.totalTimeUsed = new_time
+                solution.orderNodesVisited = new_route
+                improved = True
+                list_moves_found.append(move.__name__)
+                break  # Reinicia desde el primer movimiento
+
+    return solution, list_moves_found

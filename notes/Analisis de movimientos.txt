@@ -1,0 +1,77 @@
+RESULTADOS ORIGINALES HC MM f.insert_move, f.remove_move, f.swap_move
+17n: 37979.4 0.14[s]
+33n: 122047.66 2.52[s]
+44n: 117731.55 1.97[s]
+53n: 138983.8 14.29[s]
+70n: 164638.8 15.28[s]
+124n: 204314.15 17.64[s]
+
+
+insert_move, swap_move, move_node_forward, move_node_backward, replace_node 
+insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node 
+insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node 
+insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+
+
+HC MM: f.insert_move, f.remove_move, f.swap_move, f.two_opt_move, f.move_node_forward, f.move_node_backward, f.replace_node
+
+RESULTADOS MEJOR COMBINACION MM:
+17n: 38276.6  0.21[s]
+33n: 123679.53 10.44[s]
+44n: 119106.35 6.47[s]
+53n: 141586.9 59.23[s]
+70n: 167956.95 58.79[s]
+124n: 206312.55 42.22[s]
+
+NUMERO DE MOVIMIENTOS MM:
+insert_move: 236
+remove_move: 3
+swap_move: 196
+two_opt_move: 17
+move_node_forward: 180
+move_node_backward: 201
+replace_node: 74
+
+HC MM: f.insert_move, f.remove_move, f.swap_move, f.two_opt_move, f.move_node_forward, f.move_node_backward, f.replace_node
+
+RESULTADOS COMBINACION MM:
+17n: 38276.6 0.22[s]
+33n: 123673.3 10.13[s]
+44n: 118825.85 5.89[s]
+53n: 141689.1 60.25[s]
+70n: 167956.95 56.82[s]
+124n: 206312.55 41.42[s]
+
+
+HC AM: f.replace_node, f.remove_move, f.move_node_backward, f.swap_move, f.insert_move, f.move_node_forward, f.two_opt_move
+
+RESULTADOS MEJOR COMBINACION AM:
+17n: 38440.85 0.22[s] 
+33n: 123844.4 5.14[s]
+44n: 116268.75 3.80[s]
+53n: 141764.35 24.90[s]
+70n: 167109.8 27.27[s]
+124n: 204567.65 31.17[s]
+
+
+NUMERO DE MOVIMIENTOS AL:
+insert_move: 175
+remove_move: 8
+swap_move: 98
+two_opt_move: 6
+move_node_forward: 91
+move_node_backward: 1361
+replace_node: 434
+
+HC AM: f.replace_node, f.move_node_backward, f.swap_move, f.insert_move, f.move_node_forward
+
+
+RESULTADOS COMBINACION AM:
+17n: 38370.55 0.18[s]
+33n: 123710.43 4.64[s]
+44n: 116211.3 3.40[s]
+53n: 141691.55 22.70[s]
+70n: 167094.35 24.71[s]
+124n: 204567.65 29.17[s]

@@ -1,0 +1,715 @@
+HILL CLIMBING MEJOR MEJORA
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 40 USUARIOS EN 17 NODOS
+01) Puntaje: 38294.75 | Tiempo: 0.10s | Movimientos: swap_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 38294.75 | Tiempo: 0.14s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 38294.75 | Tiempo: 0.10s | Movimientos: remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+04) Puntaje: 38294.75 | Tiempo: 0.15s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 38278.12 | Tiempo: 0.09s | Movimientos: swap_move, move_node_backward, replace_node
+06) Puntaje: 38278.12 | Tiempo: 0.14s | Movimientos: insert_move, swap_move, move_node_backward, replace_node
+07) Puntaje: 38278.12 | Tiempo: 0.09s | Movimientos: remove_move, swap_move, move_node_backward, replace_node
+08) Puntaje: 38278.12 | Tiempo: 0.14s | Movimientos: insert_move, remove_move, swap_move, move_node_backward, replace_node
+09) Puntaje: 38276.60 | Tiempo: 0.11s | Movimientos: swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+10) Puntaje: 38276.60 | Tiempo: 0.15s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+11) Puntaje: 38276.60 | Tiempo: 0.11s | Movimientos: remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+12) Puntaje: 38276.60 | Tiempo: 0.16s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+13) Puntaje: 38255.80 | Tiempo: 0.10s | Movimientos: swap_move, two_opt_move, move_node_backward, replace_node
+14) Puntaje: 38255.80 | Tiempo: 0.14s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+15) Puntaje: 38255.80 | Tiempo: 0.10s | Movimientos: remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+16) Puntaje: 38255.80 | Tiempo: 0.14s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+17) Puntaje: 38245.85 | Tiempo: 0.08s | Movimientos: swap_move, move_node_forward, replace_node
+18) Puntaje: 38245.85 | Tiempo: 0.10s | Movimientos: remove_move, swap_move, move_node_forward, replace_node
+19) Puntaje: 38235.88 | Tiempo: 0.12s | Movimientos: insert_move, swap_move, move_node_forward, replace_node
+20) Puntaje: 38235.88 | Tiempo: 0.13s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, replace_node
+	
+
+LOS 20 MEJORES MOVIMIENTOS PARA 30 USUARIOS EN 33 NODOS
+01) Puntaje: 123679.53 | Tiempo: 9.62s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 123676.50 | Tiempo: 7.71s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 123673.30 | Tiempo: 9.53s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+04) Puntaje: 123670.27 | Tiempo: 7.77s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 123442.47 | Tiempo: 6.87s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+06) Puntaje: 123438.23 | Tiempo: 7.16s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, replace_node
+07) Puntaje: 123436.23 | Tiempo: 7.42s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+08) Puntaje: 123433.80 | Tiempo: 5.04s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, replace_node
+09) Puntaje: 123432.00 | Tiempo: 8.18s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, replace_node
+10) Puntaje: 123427.57 | Tiempo: 5.42s | Movimientos: insert_move, swap_move, move_node_forward, replace_node
+11) Puntaje: 123385.27 | Tiempo: 5.05s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward, replace_node
+12) Puntaje: 123382.67 | Tiempo: 6.76s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+13) Puntaje: 123379.03 | Tiempo: 5.20s | Movimientos: insert_move, move_node_forward, move_node_backward, replace_node
+14) Puntaje: 123376.43 | Tiempo: 7.15s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+15) Puntaje: 123172.37 | Tiempo: 4.69s | Movimientos: insert_move, remove_move, swap_move, move_node_backward, replace_node
+16) Puntaje: 123170.90 | Tiempo: 6.92s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward
+17) Puntaje: 123166.13 | Tiempo: 8.55s | Movimientos: insert_move, swap_move, move_node_backward, replace_node
+18) Puntaje: 123164.13 | Tiempo: 6.83s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward
+19) Puntaje: 123064.87 | Tiempo: 2.77s | Movimientos: insert_move, remove_move, move_node_forward, replace_node
+20) Puntaje: 123058.63 | Tiempo: 2.69s | Movimientos: insert_move, move_node_forward, replace_node
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 44 NODOS
+01) Puntaje: 119280.95 | Tiempo: 4.93s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 119280.95 | Tiempo: 5.17s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 119106.35 | Tiempo: 4.82s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+04) Puntaje: 119106.35 | Tiempo: 6.05s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 119000.45 | Tiempo: 4.63s | Movimientos: insert_move, move_node_forward, move_node_backward, replace_node
+06) Puntaje: 119000.45 | Tiempo: 5.43s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+07) Puntaje: 118946.75 | Tiempo: 4.33s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, replace_node
+08) Puntaje: 118946.75 | Tiempo: 4.81s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, replace_node
+09) Puntaje: 118825.85 | Tiempo: 4.80s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+10) Puntaje: 118825.85 | Tiempo: 5.65s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+11) Puntaje: 118666.25 | Tiempo: 4.15s | Movimientos: insert_move, swap_move, move_node_forward, replace_node
+12) Puntaje: 118666.25 | Tiempo: 4.71s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, replace_node
+13) Puntaje: 118652.75 | Tiempo: 4.09s | Movimientos: insert_move, remove_move, swap_move, move_node_backward, replace_node
+14) Puntaje: 118652.75 | Tiempo: 4.50s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+15) Puntaje: 118543.45 | Tiempo: 2.92s | Movimientos: insert_move, remove_move, swap_move, move_node_backward
+16) Puntaje: 118543.45 | Tiempo: 4.33s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward
+17) Puntaje: 118386.45 | Tiempo: 3.84s | Movimientos: insert_move, remove_move, move_node_forward, replace_node
+18) Puntaje: 118386.45 | Tiempo: 3.85s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, replace_node
+19) Puntaje: 118372.25 | Tiempo: 3.82s | Movimientos: insert_move, swap_move, move_node_backward, replace_node
+20) Puntaje: 118372.25 | Tiempo: 4.34s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 53 NODOS
+01) Puntaje: 141701.80 | Tiempo: 56.20s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 141689.10 | Tiempo: 64.64s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 141613.65 | Tiempo: 49.99s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+04) Puntaje: 141586.90 | Tiempo: 67.57s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 141535.35 | Tiempo: 53.96s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+06) Puntaje: 141511.45 | Tiempo: 51.28s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+07) Puntaje: 141352.15 | Tiempo: 71.89s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward
+08) Puntaje: 141293.35 | Tiempo: 54.68s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward
+09) Puntaje: 141288.25 | Tiempo: 62.51s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward
+10) Puntaje: 141249.85 | Tiempo: 50.06s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, replace_node
+11) Puntaje: 141201.65 | Tiempo: 54.16s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward
+12) Puntaje: 141147.65 | Tiempo: 51.43s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, replace_node
+13) Puntaje: 141095.35 | Tiempo: 45.27s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+14) Puntaje: 141085.95 | Tiempo: 44.30s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward
+15) Puntaje: 141022.05 | Tiempo: 40.85s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward
+16) Puntaje: 141003.15 | Tiempo: 36.48s | Movimientos: insert_move, move_node_forward, move_node_backward, replace_node
+17) Puntaje: 140999.65 | Tiempo: 53.95s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+18) Puntaje: 140993.40 | Tiempo: 30.61s | Movimientos: insert_move, swap_move, move_node_forward, replace_node
+19) Puntaje: 140961.95 | Tiempo: 33.58s | Movimientos: insert_move, swap_move, move_node_backward, replace_node
+20) Puntaje: 140900.95 | Tiempo: 35.85s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward, replace_node
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 70 NODOS
+01) Puntaje: 168083.00 | Tiempo: 43.13s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 168083.00 | Tiempo: 39.68s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 168063.75 | Tiempo: 40.95s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, replace_node
+04) Puntaje: 167956.95 | Tiempo: 55.23s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 167956.95 | Tiempo: 55.79s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+06) Puntaje: 167956.00 | Tiempo: 40.51s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, replace_node
+07) Puntaje: 167877.35 | Tiempo: 33.44s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, replace_node
+08) Puntaje: 167866.90 | Tiempo: 50.57s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+09) Puntaje: 167866.90 | Tiempo: 51.10s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+10) Puntaje: 167769.60 | Tiempo: 33.85s | Movimientos: insert_move, swap_move, move_node_forward, replace_node
+11) Puntaje: 167759.50 | Tiempo: 29.95s | Movimientos: insert_move, move_node_forward, move_node_backward, replace_node
+12) Puntaje: 167759.50 | Tiempo: 29.83s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward, replace_node
+13) Puntaje: 167447.15 | Tiempo: 29.60s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, replace_node
+14) Puntaje: 167367.15 | Tiempo: 42.63s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+15) Puntaje: 167367.15 | Tiempo: 43.16s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+16) Puntaje: 167314.15 | Tiempo: 29.36s | Movimientos: insert_move, two_opt_move, move_node_forward, replace_node
+17) Puntaje: 167196.35 | Tiempo: 33.57s | Movimientos: insert_move, swap_move, move_node_backward, replace_node
+18) Puntaje: 167196.35 | Tiempo: 33.57s | Movimientos: insert_move, remove_move, swap_move, move_node_backward, replace_node
+19) Puntaje: 167169.90 | Tiempo: 29.88s | Movimientos: insert_move, remove_move, two_opt_move, move_node_backward, replace_node
+20) Puntaje: 166928.35 | Tiempo: 29.03s | Movimientos: insert_move, two_opt_move, move_node_backward, replace_node
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 124 NODOS
+01) Puntaje: 206312.55 | Tiempo: 41.60s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 206312.55 | Tiempo: 41.58s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 206306.55 | Tiempo: 38.54s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+04) Puntaje: 206306.55 | Tiempo: 38.99s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 205978.10 | Tiempo: 26.73s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward
+06) Puntaje: 205978.10 | Tiempo: 26.78s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward
+07) Puntaje: 205950.15 | Tiempo: 27.61s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward
+08) Puntaje: 205950.15 | Tiempo: 28.26s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward
+09) Puntaje: 205914.60 | Tiempo: 38.01s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+10) Puntaje: 205914.60 | Tiempo: 38.66s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+11) Puntaje: 205908.60 | Tiempo: 35.94s | Movimientos: insert_move, move_node_forward, move_node_backward, replace_node
+12) Puntaje: 205908.60 | Tiempo: 35.88s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward, replace_node
+13) Puntaje: 205891.60 | Tiempo: 37.76s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+14) Puntaje: 205891.60 | Tiempo: 38.67s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+15) Puntaje: 205885.60 | Tiempo: 36.13s | Movimientos: insert_move, two_opt_move, move_node_backward, replace_node
+16) Puntaje: 205885.60 | Tiempo: 35.98s | Movimientos: insert_move, remove_move, two_opt_move, move_node_backward, replace_node
+17) Puntaje: 205801.55 | Tiempo: 23.17s | Movimientos: insert_move, move_node_forward, move_node_backward
+18) Puntaje: 205801.55 | Tiempo: 23.68s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward
+19) Puntaje: 205663.35 | Tiempo: 35.53s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, replace_node
+20) Puntaje: 205663.35 | Tiempo: 36.19s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, replace_node
+
+
+HILL CLIMBING ALGUNA MEJORA
+LOS 100 MEJORES MOVIMIENTOS PARA 40 USUARIOS EN 17 NODOS
+01) Puntaje: 38447.88 | Tiempo: 0.18s | Orden: remove_move, replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+02) Puntaje: 38447.88 | Tiempo: 0.17s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, insert_move, swap_move, two_opt_move
+03) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move
+04) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, swap_move, two_opt_move, insert_move
+05) Puntaje: 38447.88 | Tiempo: 0.17s | Orden: replace_node, remove_move, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+06) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, insert_move, swap_move, two_opt_move
+07) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move
+08) Puntaje: 38447.88 | Tiempo: 0.17s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, swap_move, two_opt_move, insert_move
+09) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, remove_move, move_node_forward, swap_move, two_opt_move
+10) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, remove_move, two_opt_move
+11) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move, remove_move
+12) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, remove_move, swap_move, two_opt_move
+13) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, remove_move, insert_move, move_node_forward, swap_move, two_opt_move
+14) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, insert_move, swap_move, two_opt_move
+15) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, swap_move, insert_move, two_opt_move
+16) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, swap_move, two_opt_move, insert_move
+17) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, move_node_forward, insert_move, swap_move, remove_move, two_opt_move
+18) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, move_node_forward, insert_move, swap_move, two_opt_move, remove_move
+19) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, move_node_forward, insert_move, remove_move, swap_move, two_opt_move
+20) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, insert_move, remove_move, two_opt_move
+21) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move, remove_move
+22) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, remove_move, insert_move, two_opt_move
+23) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, remove_move, two_opt_move, insert_move
+24) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, two_opt_move, insert_move, remove_move
+25) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, two_opt_move, remove_move, insert_move
+26) Puntaje: 38447.88 | Tiempo: 0.21s | Orden: replace_node, move_node_backward, move_node_forward, remove_move, insert_move, swap_move, two_opt_move
+27) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, move_node_forward, remove_move, swap_move, insert_move, two_opt_move
+28) Puntaje: 38447.88 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, move_node_forward, remove_move, swap_move, two_opt_move, insert_move
+29) Puntaje: 38440.85 | Tiempo: 0.21s | Orden: remove_move, replace_node, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward
+30) Puntaje: 38440.85 | Tiempo: 0.19s | Orden: remove_move, replace_node, move_node_backward, insert_move, swap_move, move_node_forward, two_opt_move
+31) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+32) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+33) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: remove_move, replace_node, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+34) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: remove_move, replace_node, move_node_backward, swap_move, two_opt_move, move_node_forward, insert_move
+35) Puntaje: 38440.85 | Tiempo: 0.29s | Orden: remove_move, replace_node, move_node_backward, swap_move, move_node_forward, insert_move, two_opt_move
+36) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: remove_move, replace_node, move_node_backward, swap_move, move_node_forward, two_opt_move, insert_move
+37) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, remove_move, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward
+38) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, remove_move, move_node_backward, insert_move, swap_move, move_node_forward, two_opt_move
+39) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+40) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+41) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, remove_move, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+42) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, remove_move, move_node_backward, swap_move, two_opt_move, move_node_forward, insert_move
+43) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, remove_move, move_node_backward, swap_move, move_node_forward, insert_move, two_opt_move
+44) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, remove_move, move_node_backward, swap_move, move_node_forward, two_opt_move, insert_move
+45) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, swap_move, remove_move, two_opt_move, move_node_forward
+46) Puntaje: 38440.85 | Tiempo: 0.17s | Orden: replace_node, move_node_backward, insert_move, swap_move, remove_move, move_node_forward, two_opt_move
+47) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, swap_move, two_opt_move, remove_move, move_node_forward
+48) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward, remove_move
+49) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, swap_move, move_node_forward, remove_move, two_opt_move
+50) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, swap_move, move_node_forward, two_opt_move, remove_move
+51) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, remove_move, swap_move, two_opt_move, move_node_forward
+52) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, remove_move, swap_move, move_node_forward, two_opt_move
+53) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, two_opt_move, move_node_forward
+54) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, move_node_forward, two_opt_move
+55) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, remove_move, move_node_forward
+56) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward, remove_move
+57) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, remove_move, two_opt_move
+58) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move, remove_move
+59) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, two_opt_move, move_node_forward
+60) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, move_node_forward, two_opt_move
+61) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, remove_move, two_opt_move, insert_move, move_node_forward
+62) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, remove_move, two_opt_move, move_node_forward, insert_move
+63) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, remove_move, move_node_forward, insert_move, two_opt_move
+64) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, remove_move, move_node_forward, two_opt_move, insert_move
+65) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, insert_move, remove_move, move_node_forward
+66) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward, remove_move
+67) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, remove_move, insert_move, move_node_forward
+68) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, remove_move, move_node_forward, insert_move
+69) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, move_node_forward, insert_move, remove_move
+70) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, move_node_forward, remove_move, insert_move
+71) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, insert_move, remove_move, two_opt_move
+72) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, insert_move, two_opt_move, remove_move
+73) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, remove_move, insert_move, two_opt_move
+74) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, remove_move, two_opt_move, insert_move
+75) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, two_opt_move, insert_move, remove_move
+76) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, two_opt_move, remove_move, insert_move
+77) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, remove_move, insert_move, swap_move, two_opt_move, move_node_forward
+78) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, remove_move, insert_move, swap_move, move_node_forward, two_opt_move
+79) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, insert_move, two_opt_move, move_node_forward
+80) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, insert_move, move_node_forward, two_opt_move
+81) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, two_opt_move, insert_move, move_node_forward
+82) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, two_opt_move, move_node_forward, insert_move
+83) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, move_node_forward, insert_move, two_opt_move
+84) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, move_node_forward, two_opt_move, insert_move
+85) Puntaje: 38439.32 | Tiempo: 0.15s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward
+86) Puntaje: 38439.32 | Tiempo: 0.15s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, move_node_backward, two_opt_move
+87) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: remove_move, replace_node, swap_move, move_node_forward, insert_move, two_opt_move, move_node_backward
+88) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: remove_move, replace_node, swap_move, move_node_forward, insert_move, move_node_backward, two_opt_move
+89) Puntaje: 38439.32 | Tiempo: 0.15s | Orden: remove_move, replace_node, swap_move, move_node_forward, two_opt_move, insert_move, move_node_backward
+90) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: remove_move, replace_node, swap_move, move_node_forward, two_opt_move, move_node_backward, insert_move
+91) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: remove_move, replace_node, swap_move, move_node_forward, move_node_backward, insert_move, two_opt_move
+92) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: remove_move, replace_node, swap_move, move_node_forward, move_node_backward, two_opt_move, insert_move
+93) Puntaje: 38439.32 | Tiempo: 0.13s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, two_opt_move, move_node_backward
+94) Puntaje: 38439.32 | Tiempo: 0.13s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, move_node_backward, two_opt_move
+95) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, remove_move, two_opt_move, move_node_backward
+96) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, remove_move, move_node_backward, two_opt_move
+97) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, remove_move, move_node_backward
+98) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward, remove_move
+99) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, move_node_backward, remove_move, two_opt_move
+100) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, move_node_backward, two_opt_move, remove_move
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 30 USUARIOS EN 33 NODOS
+01) Score: 124178.60 | Tiempo: 4.71s | Orden: remove_move, replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+02) Score: 124169.77 | Tiempo: 4.55s | Orden: replace_node, remove_move, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+03) Score: 124169.77 | Tiempo: 4.69s | Orden: replace_node, move_node_backward, remove_move, insert_move, move_node_forward, swap_move, two_opt_move
+04) Score: 124070.20 | Tiempo: 4.50s | Orden: replace_node, move_node_backward, insert_move, remove_move, move_node_forward, swap_move, two_opt_move
+05) Score: 124070.20 | Tiempo: 4.68s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, remove_move, two_opt_move
+06) Score: 124070.20 | Tiempo: 4.28s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move, remove_move
+07) Score: 124070.20 | Tiempo: 4.23s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, remove_move, swap_move, two_opt_move
+08) Score: 124029.83 | Tiempo: 4.82s | Orden: remove_move, replace_node, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward
+09) Score: 124029.83 | Tiempo: 4.55s | Orden: remove_move, replace_node, move_node_backward, insert_move, swap_move, move_node_forward, two_opt_move
+10) Score: 124021.73 | Tiempo: 4.64s | Orden: replace_node, remove_move, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward
+11) Score: 124021.73 | Tiempo: 4.46s | Orden: replace_node, remove_move, move_node_backward, insert_move, swap_move, move_node_forward, two_opt_move
+12) Score: 124021.73 | Tiempo: 4.58s | Orden: replace_node, move_node_backward, remove_move, insert_move, swap_move, two_opt_move, move_node_forward
+13) Score: 124021.73 | Tiempo: 4.29s | Orden: replace_node, move_node_backward, remove_move, insert_move, swap_move, move_node_forward, two_opt_move
+14) Score: 123923.47 | Tiempo: 5.17s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+15) Score: 123923.47 | Tiempo: 4.97s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+16) Score: 123923.47 | Tiempo: 5.45s | Orden: remove_move, replace_node, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+17) Score: 123922.17 | Tiempo: 4.44s | Orden: replace_node, move_node_backward, insert_move, swap_move, remove_move, two_opt_move, move_node_forward
+18) Score: 123922.17 | Tiempo: 4.21s | Orden: replace_node, move_node_backward, insert_move, swap_move, remove_move, move_node_forward, two_opt_move
+19) Score: 123922.17 | Tiempo: 4.41s | Orden: replace_node, move_node_backward, insert_move, swap_move, two_opt_move, remove_move, move_node_forward
+20) Score: 123922.17 | Tiempo: 4.43s | Orden: replace_node, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward, remove_move
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 44 NODOS
+01) Score: 116956.25 | Tiempo: 3.72s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward
+02) Score: 116956.25 | Tiempo: 3.65s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, move_node_backward, two_opt_move
+03) Score: 116814.90 | Tiempo: 3.70s | Orden: remove_move, replace_node, swap_move, move_node_forward, insert_move, two_opt_move, move_node_backward
+04) Score: 116814.90 | Tiempo: 3.64s | Orden: remove_move, replace_node, swap_move, move_node_forward, insert_move, move_node_backward, two_opt_move
+05) Score: 116796.65 | Tiempo: 3.49s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, two_opt_move, move_node_backward
+06) Score: 116796.65 | Tiempo: 3.48s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, move_node_backward, two_opt_move
+07) Score: 116796.65 | Tiempo: 3.48s | Orden: replace_node, swap_move, insert_move, move_node_forward, remove_move, two_opt_move, move_node_backward
+08) Score: 116796.65 | Tiempo: 3.66s | Orden: replace_node, swap_move, insert_move, move_node_forward, remove_move, move_node_backward, two_opt_move
+09) Score: 116796.65 | Tiempo: 3.50s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, remove_move, move_node_backward
+10) Score: 116796.65 | Tiempo: 3.47s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward, remove_move
+11) Score: 116796.65 | Tiempo: 3.43s | Orden: replace_node, swap_move, insert_move, move_node_forward, move_node_backward, remove_move, two_opt_move
+12) Score: 116796.65 | Tiempo: 3.42s | Orden: replace_node, swap_move, insert_move, move_node_forward, move_node_backward, two_opt_move, remove_move
+13) Score: 116637.85 | Tiempo: 3.92s | Orden: remove_move, replace_node, swap_move, move_node_forward, two_opt_move, insert_move, move_node_backward
+14) Score: 116566.05 | Tiempo: 3.83s | Orden: replace_node, remove_move, move_node_backward, swap_move, move_node_forward, insert_move, two_opt_move
+15) Score: 116566.05 | Tiempo: 3.80s | Orden: replace_node, move_node_backward, swap_move, remove_move, move_node_forward, insert_move, two_opt_move
+16) Score: 116499.80 | Tiempo: 3.82s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move
+17) Score: 116499.80 | Tiempo: 3.77s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, swap_move, insert_move, two_opt_move
+18) Score: 116499.80 | Tiempo: 3.76s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, remove_move, insert_move, two_opt_move
+19) Score: 116499.80 | Tiempo: 3.72s | Orden: replace_node, move_node_backward, move_node_forward, remove_move, swap_move, insert_move, two_opt_move
+20) Score: 116458.45 | Tiempo: 4.06s | Orden: remove_move, replace_node, move_node_backward, swap_move, move_node_forward, insert_move, two_opt_move
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 53 NODOS
+01) Score: 141883.95 | Tiempo: 21.25s | Orden: replace_node, remove_move, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+02) Score: 141790.15 | Tiempo: 20.53s | Orden: replace_node, move_node_backward, insert_move, remove_move, move_node_forward, swap_move, two_opt_move
+03) Score: 141790.15 | Tiempo: 20.55s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, remove_move, two_opt_move
+04) Score: 141790.15 | Tiempo: 20.41s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move, remove_move
+05) Score: 141790.15 | Tiempo: 20.44s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, remove_move, swap_move, two_opt_move
+06) Score: 141790.15 | Tiempo: 20.49s | Orden: replace_node, move_node_backward, remove_move, insert_move, move_node_forward, swap_move, two_opt_move
+07) Score: 141788.60 | Tiempo: 23.15s | Orden: remove_move, replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+08) Score: 141764.35 | Tiempo: 24.13s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+09) Score: 141764.35 | Tiempo: 22.74s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+10) Score: 141743.15 | Tiempo: 23.88s | Orden: replace_node, remove_move, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+11) Score: 141702.00 | Tiempo: 23.90s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, two_opt_move, move_node_forward
+12) Score: 141702.00 | Tiempo: 22.42s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, move_node_forward, two_opt_move
+13) Score: 141702.00 | Tiempo: 23.91s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, remove_move, move_node_forward
+14) Score: 141702.00 | Tiempo: 23.92s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward, remove_move
+15) Score: 141702.00 | Tiempo: 23.54s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, remove_move, two_opt_move
+16) Score: 141702.00 | Tiempo: 22.34s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move, remove_move
+17) Score: 141702.00 | Tiempo: 23.94s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, two_opt_move, move_node_forward
+18) Score: 141702.00 | Tiempo: 22.58s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, move_node_forward, two_opt_move
+19) Score: 141702.00 | Tiempo: 25.34s | Orden: replace_node, move_node_backward, swap_move, remove_move, two_opt_move, insert_move, move_node_forward
+20) Score: 141702.00 | Tiempo: 24.32s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, insert_move, remove_move, move_node_forward
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 70 NODOS
+01) Score: 167418.70 | Tiempo: 33.40s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, two_opt_move, move_node_backward
+02) Score: 167407.55 | Tiempo: 36.72s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward
+03) Score: 167339.00 | Tiempo: 28.86s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, insert_move, swap_move, two_opt_move
+04) Score: 167339.00 | Tiempo: 28.61s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move
+05) Score: 167339.00 | Tiempo: 28.53s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, swap_move, two_opt_move, insert_move
+06) Score: 167339.00 | Tiempo: 35.72s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, insert_move, swap_move, two_opt_move
+07) Score: 167339.00 | Tiempo: 33.33s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move
+08) Score: 167339.00 | Tiempo: 28.48s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, swap_move, two_opt_move, insert_move
+09) Score: 167329.80 | Tiempo: 32.57s | Orden: replace_node, swap_move, insert_move, move_node_forward, remove_move, two_opt_move, move_node_backward
+10) Score: 167329.80 | Tiempo: 31.84s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, remove_move, move_node_backward
+11) Score: 167329.80 | Tiempo: 31.61s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward, remove_move
+12) Score: 167313.65 | Tiempo: 32.37s | Orden: remove_move, replace_node, swap_move, move_node_forward, insert_move, two_opt_move, move_node_backward
+13) Score: 167313.65 | Tiempo: 32.12s | Orden: remove_move, replace_node, swap_move, move_node_forward, two_opt_move, insert_move, move_node_backward
+14) Score: 167313.65 | Tiempo: 31.08s | Orden: remove_move, replace_node, swap_move, move_node_forward, two_opt_move, move_node_backward, insert_move
+15) Score: 167305.00 | Tiempo: 30.66s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, move_node_backward, two_opt_move
+16) Score: 167293.85 | Tiempo: 34.31s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, move_node_backward, two_opt_move
+17) Score: 167247.65 | Tiempo: 28.43s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, insert_move, swap_move, two_opt_move
+18) Score: 167247.65 | Tiempo: 27.37s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, swap_move, insert_move, two_opt_move
+19) Score: 167247.65 | Tiempo: 28.13s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, swap_move, two_opt_move, insert_move
+20) Score: 167247.65 | Tiempo: 28.67s | Orden: replace_node, move_node_backward, move_node_forward, insert_move, swap_move, remove_move, two_opt_move
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 124 NODOS
+01) Score: 204567.65 | Tiempo: 28.15s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+02) Score: 204567.65 | Tiempo: 28.17s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+03) Score: 204567.65 | Tiempo: 29.21s | Orden: remove_move, replace_node, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+04) Score: 204567.65 | Tiempo: 28.22s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+05) Score: 204567.65 | Tiempo: 28.10s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+06) Score: 204567.65 | Tiempo: 29.27s | Orden: replace_node, remove_move, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+07) Score: 204567.65 | Tiempo: 28.08s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, two_opt_move, move_node_forward
+08) Score: 204567.65 | Tiempo: 29.22s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, move_node_forward, two_opt_move
+09) Score: 204567.65 | Tiempo: 28.08s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, remove_move, move_node_forward
+10) Score: 204567.65 | Tiempo: 28.09s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward, remove_move
+11) Score: 204567.65 | Tiempo: 28.12s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, remove_move, two_opt_move
+12) Score: 204567.65 | Tiempo: 28.14s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move, remove_move
+13) Score: 204567.65 | Tiempo: 28.17s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, two_opt_move, move_node_forward
+14) Score: 204567.65 | Tiempo: 28.15s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, move_node_forward, two_opt_move
+15) Score: 204567.65 | Tiempo: 29.17s | Orden: replace_node, move_node_backward, swap_move, remove_move, two_opt_move, insert_move, move_node_forward
+16) Score: 204567.65 | Tiempo: 29.05s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, insert_move, remove_move, move_node_forward
+17) Score: 204567.65 | Tiempo: 29.03s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward, remove_move
+18) Score: 204567.65 | Tiempo: 29.44s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, remove_move, insert_move, move_node_forward
+19) Score: 204567.65 | Tiempo: 28.01s | Orden: replace_node, move_node_backward, remove_move, swap_move, insert_move, two_opt_move, move_node_forward
+20) Score: 204567.65 | Tiempo: 28.21s | Orden: replace_node, move_node_backward, remove_move, swap_move, insert_move, move_node_forward, two_opt_move
+
+
+
+HILL CLIMBING MEJOR MEJORA
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 40 USUARIOS EN 17 NODOS
+01) Puntaje: 38294.75 | Tiempo: 0.10s | Movimientos: swap_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 38294.75 | Tiempo: 0.14s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 38294.75 | Tiempo: 0.10s | Movimientos: remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+04) Puntaje: 38294.75 | Tiempo: 0.15s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 38278.12 | Tiempo: 0.09s | Movimientos: swap_move, move_node_backward, replace_node
+06) Puntaje: 38278.12 | Tiempo: 0.14s | Movimientos: insert_move, swap_move, move_node_backward, replace_node
+07) Puntaje: 38278.12 | Tiempo: 0.09s | Movimientos: remove_move, swap_move, move_node_backward, replace_node
+08) Puntaje: 38278.12 | Tiempo: 0.14s | Movimientos: insert_move, remove_move, swap_move, move_node_backward, replace_node
+09) Puntaje: 38276.60 | Tiempo: 0.11s | Movimientos: swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+10) Puntaje: 38276.60 | Tiempo: 0.15s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+11) Puntaje: 38276.60 | Tiempo: 0.11s | Movimientos: remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+12) Puntaje: 38276.60 | Tiempo: 0.16s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+13) Puntaje: 38255.80 | Tiempo: 0.10s | Movimientos: swap_move, two_opt_move, move_node_backward, replace_node
+14) Puntaje: 38255.80 | Tiempo: 0.14s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+15) Puntaje: 38255.80 | Tiempo: 0.10s | Movimientos: remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+16) Puntaje: 38255.80 | Tiempo: 0.14s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+17) Puntaje: 38245.85 | Tiempo: 0.08s | Movimientos: swap_move, move_node_forward, replace_node
+18) Puntaje: 38245.85 | Tiempo: 0.10s | Movimientos: remove_move, swap_move, move_node_forward, replace_node
+19) Puntaje: 38235.88 | Tiempo: 0.12s | Movimientos: insert_move, swap_move, move_node_forward, replace_node
+20) Puntaje: 38235.88 | Tiempo: 0.13s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, replace_node
+	
+
+LOS 20 MEJORES MOVIMIENTOS PARA 30 USUARIOS EN 33 NODOS
+01) Puntaje: 123679.53 | Tiempo: 9.62s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 123676.50 | Tiempo: 7.71s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 123673.30 | Tiempo: 9.53s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+04) Puntaje: 123670.27 | Tiempo: 7.77s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 123442.47 | Tiempo: 6.87s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+06) Puntaje: 123438.23 | Tiempo: 7.16s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, replace_node
+07) Puntaje: 123436.23 | Tiempo: 7.42s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+08) Puntaje: 123433.80 | Tiempo: 5.04s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, replace_node
+09) Puntaje: 123432.00 | Tiempo: 8.18s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, replace_node
+10) Puntaje: 123427.57 | Tiempo: 5.42s | Movimientos: insert_move, swap_move, move_node_forward, replace_node
+11) Puntaje: 123385.27 | Tiempo: 5.05s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward, replace_node
+12) Puntaje: 123382.67 | Tiempo: 6.76s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+13) Puntaje: 123379.03 | Tiempo: 5.20s | Movimientos: insert_move, move_node_forward, move_node_backward, replace_node
+14) Puntaje: 123376.43 | Tiempo: 7.15s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+15) Puntaje: 123172.37 | Tiempo: 4.69s | Movimientos: insert_move, remove_move, swap_move, move_node_backward, replace_node
+16) Puntaje: 123170.90 | Tiempo: 6.92s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward
+17) Puntaje: 123166.13 | Tiempo: 8.55s | Movimientos: insert_move, swap_move, move_node_backward, replace_node
+18) Puntaje: 123164.13 | Tiempo: 6.83s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward
+19) Puntaje: 123064.87 | Tiempo: 2.77s | Movimientos: insert_move, remove_move, move_node_forward, replace_node
+20) Puntaje: 123058.63 | Tiempo: 2.69s | Movimientos: insert_move, move_node_forward, replace_node
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 44 NODOS
+01) Puntaje: 119280.95 | Tiempo: 4.93s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 119280.95 | Tiempo: 5.17s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 119106.35 | Tiempo: 4.82s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+04) Puntaje: 119106.35 | Tiempo: 6.05s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 119000.45 | Tiempo: 4.63s | Movimientos: insert_move, move_node_forward, move_node_backward, replace_node
+06) Puntaje: 119000.45 | Tiempo: 5.43s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+07) Puntaje: 118946.75 | Tiempo: 4.33s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, replace_node
+08) Puntaje: 118946.75 | Tiempo: 4.81s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, replace_node
+09) Puntaje: 118825.85 | Tiempo: 4.80s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+10) Puntaje: 118825.85 | Tiempo: 5.65s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+11) Puntaje: 118666.25 | Tiempo: 4.15s | Movimientos: insert_move, swap_move, move_node_forward, replace_node
+12) Puntaje: 118666.25 | Tiempo: 4.71s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, replace_node
+13) Puntaje: 118652.75 | Tiempo: 4.09s | Movimientos: insert_move, remove_move, swap_move, move_node_backward, replace_node
+14) Puntaje: 118652.75 | Tiempo: 4.50s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+15) Puntaje: 118543.45 | Tiempo: 2.92s | Movimientos: insert_move, remove_move, swap_move, move_node_backward
+16) Puntaje: 118543.45 | Tiempo: 4.33s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward
+17) Puntaje: 118386.45 | Tiempo: 3.84s | Movimientos: insert_move, remove_move, move_node_forward, replace_node
+18) Puntaje: 118386.45 | Tiempo: 3.85s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, replace_node
+19) Puntaje: 118372.25 | Tiempo: 3.82s | Movimientos: insert_move, swap_move, move_node_backward, replace_node
+20) Puntaje: 118372.25 | Tiempo: 4.34s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 53 NODOS
+01) Puntaje: 141701.80 | Tiempo: 56.20s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 141689.10 | Tiempo: 64.64s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 141613.65 | Tiempo: 49.99s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+04) Puntaje: 141586.90 | Tiempo: 67.57s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 141535.35 | Tiempo: 53.96s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+06) Puntaje: 141511.45 | Tiempo: 51.28s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+07) Puntaje: 141352.15 | Tiempo: 71.89s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward
+08) Puntaje: 141293.35 | Tiempo: 54.68s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward
+09) Puntaje: 141288.25 | Tiempo: 62.51s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward
+10) Puntaje: 141249.85 | Tiempo: 50.06s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, replace_node
+11) Puntaje: 141201.65 | Tiempo: 54.16s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward
+12) Puntaje: 141147.65 | Tiempo: 51.43s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, replace_node
+13) Puntaje: 141095.35 | Tiempo: 45.27s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+14) Puntaje: 141085.95 | Tiempo: 44.30s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward
+15) Puntaje: 141022.05 | Tiempo: 40.85s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward
+16) Puntaje: 141003.15 | Tiempo: 36.48s | Movimientos: insert_move, move_node_forward, move_node_backward, replace_node
+17) Puntaje: 140999.65 | Tiempo: 53.95s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+18) Puntaje: 140993.40 | Tiempo: 30.61s | Movimientos: insert_move, swap_move, move_node_forward, replace_node
+19) Puntaje: 140961.95 | Tiempo: 33.58s | Movimientos: insert_move, swap_move, move_node_backward, replace_node
+20) Puntaje: 140900.95 | Tiempo: 35.85s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward, replace_node
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 70 NODOS
+01) Puntaje: 168083.00 | Tiempo: 43.13s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 168083.00 | Tiempo: 39.68s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 168063.75 | Tiempo: 40.95s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, replace_node
+04) Puntaje: 167956.95 | Tiempo: 55.23s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 167956.95 | Tiempo: 55.79s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+06) Puntaje: 167956.00 | Tiempo: 40.51s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, replace_node
+07) Puntaje: 167877.35 | Tiempo: 33.44s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, replace_node
+08) Puntaje: 167866.90 | Tiempo: 50.57s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+09) Puntaje: 167866.90 | Tiempo: 51.10s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+10) Puntaje: 167769.60 | Tiempo: 33.85s | Movimientos: insert_move, swap_move, move_node_forward, replace_node
+11) Puntaje: 167759.50 | Tiempo: 29.95s | Movimientos: insert_move, move_node_forward, move_node_backward, replace_node
+12) Puntaje: 167759.50 | Tiempo: 29.83s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward, replace_node
+13) Puntaje: 167447.15 | Tiempo: 29.60s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, replace_node
+14) Puntaje: 167367.15 | Tiempo: 42.63s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+15) Puntaje: 167367.15 | Tiempo: 43.16s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+16) Puntaje: 167314.15 | Tiempo: 29.36s | Movimientos: insert_move, two_opt_move, move_node_forward, replace_node
+17) Puntaje: 167196.35 | Tiempo: 33.57s | Movimientos: insert_move, swap_move, move_node_backward, replace_node
+18) Puntaje: 167196.35 | Tiempo: 33.57s | Movimientos: insert_move, remove_move, swap_move, move_node_backward, replace_node
+19) Puntaje: 167169.90 | Tiempo: 29.88s | Movimientos: insert_move, remove_move, two_opt_move, move_node_backward, replace_node
+20) Puntaje: 166928.35 | Tiempo: 29.03s | Movimientos: insert_move, two_opt_move, move_node_backward, replace_node
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 124 NODOS
+01) Puntaje: 206312.55 | Tiempo: 41.60s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+02) Puntaje: 206312.55 | Tiempo: 41.58s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+03) Puntaje: 206306.55 | Tiempo: 38.54s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+04) Puntaje: 206306.55 | Tiempo: 38.99s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward, replace_node
+05) Puntaje: 205978.10 | Tiempo: 26.73s | Movimientos: insert_move, two_opt_move, move_node_forward, move_node_backward
+06) Puntaje: 205978.10 | Tiempo: 26.78s | Movimientos: insert_move, remove_move, two_opt_move, move_node_forward, move_node_backward
+07) Puntaje: 205950.15 | Tiempo: 27.61s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, move_node_backward
+08) Puntaje: 205950.15 | Tiempo: 28.26s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, move_node_backward
+09) Puntaje: 205914.60 | Tiempo: 38.01s | Movimientos: insert_move, swap_move, move_node_forward, move_node_backward, replace_node
+10) Puntaje: 205914.60 | Tiempo: 38.66s | Movimientos: insert_move, remove_move, swap_move, move_node_forward, move_node_backward, replace_node
+11) Puntaje: 205908.60 | Tiempo: 35.94s | Movimientos: insert_move, move_node_forward, move_node_backward, replace_node
+12) Puntaje: 205908.60 | Tiempo: 35.88s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward, replace_node
+13) Puntaje: 205891.60 | Tiempo: 37.76s | Movimientos: insert_move, swap_move, two_opt_move, move_node_backward, replace_node
+14) Puntaje: 205891.60 | Tiempo: 38.67s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_backward, replace_node
+15) Puntaje: 205885.60 | Tiempo: 36.13s | Movimientos: insert_move, two_opt_move, move_node_backward, replace_node
+16) Puntaje: 205885.60 | Tiempo: 35.98s | Movimientos: insert_move, remove_move, two_opt_move, move_node_backward, replace_node
+17) Puntaje: 205801.55 | Tiempo: 23.17s | Movimientos: insert_move, move_node_forward, move_node_backward
+18) Puntaje: 205801.55 | Tiempo: 23.68s | Movimientos: insert_move, remove_move, move_node_forward, move_node_backward
+19) Puntaje: 205663.35 | Tiempo: 35.53s | Movimientos: insert_move, swap_move, two_opt_move, move_node_forward, replace_node
+20) Puntaje: 205663.35 | Tiempo: 36.19s | Movimientos: insert_move, remove_move, swap_move, two_opt_move, move_node_forward, replace_node
+
+
+HILL CLIMBING ALGUNA MEJORA
+LOS 100 MEJORES MOVIMIENTOS PARA 40 USUARIOS EN 17 NODOS
+01) Puntaje: 38447.88 | Tiempo: 0.18s | Orden: remove_move, replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+02) Puntaje: 38447.88 | Tiempo: 0.17s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, insert_move, swap_move, two_opt_move
+03) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move
+04) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, swap_move, two_opt_move, insert_move
+05) Puntaje: 38447.88 | Tiempo: 0.17s | Orden: replace_node, remove_move, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+06) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, insert_move, swap_move, two_opt_move
+07) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move
+08) Puntaje: 38447.88 | Tiempo: 0.17s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, swap_move, two_opt_move, insert_move
+09) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, remove_move, move_node_forward, swap_move, two_opt_move
+10) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, remove_move, two_opt_move
+11) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move, remove_move
+12) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, remove_move, swap_move, two_opt_move
+13) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, remove_move, insert_move, move_node_forward, swap_move, two_opt_move
+14) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, insert_move, swap_move, two_opt_move
+15) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, swap_move, insert_move, two_opt_move
+16) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, swap_move, two_opt_move, insert_move
+17) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, move_node_forward, insert_move, swap_move, remove_move, two_opt_move
+18) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, move_node_forward, insert_move, swap_move, two_opt_move, remove_move
+19) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, move_node_forward, insert_move, remove_move, swap_move, two_opt_move
+20) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, insert_move, remove_move, two_opt_move
+21) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move, remove_move
+22) Puntaje: 38447.88 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, remove_move, insert_move, two_opt_move
+23) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, remove_move, two_opt_move, insert_move
+24) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, two_opt_move, insert_move, remove_move
+25) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, two_opt_move, remove_move, insert_move
+26) Puntaje: 38447.88 | Tiempo: 0.21s | Orden: replace_node, move_node_backward, move_node_forward, remove_move, insert_move, swap_move, two_opt_move
+27) Puntaje: 38447.88 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, move_node_forward, remove_move, swap_move, insert_move, two_opt_move
+28) Puntaje: 38447.88 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, move_node_forward, remove_move, swap_move, two_opt_move, insert_move
+29) Puntaje: 38440.85 | Tiempo: 0.21s | Orden: remove_move, replace_node, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward
+30) Puntaje: 38440.85 | Tiempo: 0.19s | Orden: remove_move, replace_node, move_node_backward, insert_move, swap_move, move_node_forward, two_opt_move
+31) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+32) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+33) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: remove_move, replace_node, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+34) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: remove_move, replace_node, move_node_backward, swap_move, two_opt_move, move_node_forward, insert_move
+35) Puntaje: 38440.85 | Tiempo: 0.29s | Orden: remove_move, replace_node, move_node_backward, swap_move, move_node_forward, insert_move, two_opt_move
+36) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: remove_move, replace_node, move_node_backward, swap_move, move_node_forward, two_opt_move, insert_move
+37) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, remove_move, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward
+38) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, remove_move, move_node_backward, insert_move, swap_move, move_node_forward, two_opt_move
+39) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+40) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+41) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, remove_move, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+42) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, remove_move, move_node_backward, swap_move, two_opt_move, move_node_forward, insert_move
+43) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, remove_move, move_node_backward, swap_move, move_node_forward, insert_move, two_opt_move
+44) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, remove_move, move_node_backward, swap_move, move_node_forward, two_opt_move, insert_move
+45) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, swap_move, remove_move, two_opt_move, move_node_forward
+46) Puntaje: 38440.85 | Tiempo: 0.17s | Orden: replace_node, move_node_backward, insert_move, swap_move, remove_move, move_node_forward, two_opt_move
+47) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, swap_move, two_opt_move, remove_move, move_node_forward
+48) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward, remove_move
+49) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, swap_move, move_node_forward, remove_move, two_opt_move
+50) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, swap_move, move_node_forward, two_opt_move, remove_move
+51) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, remove_move, swap_move, two_opt_move, move_node_forward
+52) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, insert_move, remove_move, swap_move, move_node_forward, two_opt_move
+53) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, two_opt_move, move_node_forward
+54) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, move_node_forward, two_opt_move
+55) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, remove_move, move_node_forward
+56) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward, remove_move
+57) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, remove_move, two_opt_move
+58) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move, remove_move
+59) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, two_opt_move, move_node_forward
+60) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, move_node_forward, two_opt_move
+61) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, remove_move, two_opt_move, insert_move, move_node_forward
+62) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, remove_move, two_opt_move, move_node_forward, insert_move
+63) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, remove_move, move_node_forward, insert_move, two_opt_move
+64) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, remove_move, move_node_forward, two_opt_move, insert_move
+65) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, insert_move, remove_move, move_node_forward
+66) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward, remove_move
+67) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, remove_move, insert_move, move_node_forward
+68) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, remove_move, move_node_forward, insert_move
+69) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, move_node_forward, insert_move, remove_move
+70) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, move_node_forward, remove_move, insert_move
+71) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, insert_move, remove_move, two_opt_move
+72) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, insert_move, two_opt_move, remove_move
+73) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, remove_move, insert_move, two_opt_move
+74) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, remove_move, two_opt_move, insert_move
+75) Puntaje: 38440.85 | Tiempo: 0.14s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, two_opt_move, insert_move, remove_move
+76) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, swap_move, move_node_forward, two_opt_move, remove_move, insert_move
+77) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, remove_move, insert_move, swap_move, two_opt_move, move_node_forward
+78) Puntaje: 38440.85 | Tiempo: 0.16s | Orden: replace_node, move_node_backward, remove_move, insert_move, swap_move, move_node_forward, two_opt_move
+79) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, insert_move, two_opt_move, move_node_forward
+80) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, insert_move, move_node_forward, two_opt_move
+81) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, two_opt_move, insert_move, move_node_forward
+82) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, two_opt_move, move_node_forward, insert_move
+83) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, move_node_forward, insert_move, two_opt_move
+84) Puntaje: 38440.85 | Tiempo: 0.15s | Orden: replace_node, move_node_backward, remove_move, swap_move, move_node_forward, two_opt_move, insert_move
+85) Puntaje: 38439.32 | Tiempo: 0.15s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward
+86) Puntaje: 38439.32 | Tiempo: 0.15s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, move_node_backward, two_opt_move
+87) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: remove_move, replace_node, swap_move, move_node_forward, insert_move, two_opt_move, move_node_backward
+88) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: remove_move, replace_node, swap_move, move_node_forward, insert_move, move_node_backward, two_opt_move
+89) Puntaje: 38439.32 | Tiempo: 0.15s | Orden: remove_move, replace_node, swap_move, move_node_forward, two_opt_move, insert_move, move_node_backward
+90) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: remove_move, replace_node, swap_move, move_node_forward, two_opt_move, move_node_backward, insert_move
+91) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: remove_move, replace_node, swap_move, move_node_forward, move_node_backward, insert_move, two_opt_move
+92) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: remove_move, replace_node, swap_move, move_node_forward, move_node_backward, two_opt_move, insert_move
+93) Puntaje: 38439.32 | Tiempo: 0.13s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, two_opt_move, move_node_backward
+94) Puntaje: 38439.32 | Tiempo: 0.13s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, move_node_backward, two_opt_move
+95) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, remove_move, two_opt_move, move_node_backward
+96) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, remove_move, move_node_backward, two_opt_move
+97) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, remove_move, move_node_backward
+98) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward, remove_move
+99) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, move_node_backward, remove_move, two_opt_move
+100) Puntaje: 38439.32 | Tiempo: 0.14s | Orden: replace_node, swap_move, insert_move, move_node_forward, move_node_backward, two_opt_move, remove_move
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 30 USUARIOS EN 33 NODOS
+01) Score: 124178.60 | Tiempo: 4.71s | Orden: remove_move, replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+02) Score: 124169.77 | Tiempo: 4.55s | Orden: replace_node, remove_move, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+03) Score: 124169.77 | Tiempo: 4.69s | Orden: replace_node, move_node_backward, remove_move, insert_move, move_node_forward, swap_move, two_opt_move
+04) Score: 124070.20 | Tiempo: 4.50s | Orden: replace_node, move_node_backward, insert_move, remove_move, move_node_forward, swap_move, two_opt_move
+05) Score: 124070.20 | Tiempo: 4.68s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, remove_move, two_opt_move
+06) Score: 124070.20 | Tiempo: 4.28s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move, remove_move
+07) Score: 124070.20 | Tiempo: 4.23s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, remove_move, swap_move, two_opt_move
+08) Score: 124029.83 | Tiempo: 4.82s | Orden: remove_move, replace_node, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward
+09) Score: 124029.83 | Tiempo: 4.55s | Orden: remove_move, replace_node, move_node_backward, insert_move, swap_move, move_node_forward, two_opt_move
+10) Score: 124021.73 | Tiempo: 4.64s | Orden: replace_node, remove_move, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward
+11) Score: 124021.73 | Tiempo: 4.46s | Orden: replace_node, remove_move, move_node_backward, insert_move, swap_move, move_node_forward, two_opt_move
+12) Score: 124021.73 | Tiempo: 4.58s | Orden: replace_node, move_node_backward, remove_move, insert_move, swap_move, two_opt_move, move_node_forward
+13) Score: 124021.73 | Tiempo: 4.29s | Orden: replace_node, move_node_backward, remove_move, insert_move, swap_move, move_node_forward, two_opt_move
+14) Score: 123923.47 | Tiempo: 5.17s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+15) Score: 123923.47 | Tiempo: 4.97s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+16) Score: 123923.47 | Tiempo: 5.45s | Orden: remove_move, replace_node, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+17) Score: 123922.17 | Tiempo: 4.44s | Orden: replace_node, move_node_backward, insert_move, swap_move, remove_move, two_opt_move, move_node_forward
+18) Score: 123922.17 | Tiempo: 4.21s | Orden: replace_node, move_node_backward, insert_move, swap_move, remove_move, move_node_forward, two_opt_move
+19) Score: 123922.17 | Tiempo: 4.41s | Orden: replace_node, move_node_backward, insert_move, swap_move, two_opt_move, remove_move, move_node_forward
+20) Score: 123922.17 | Tiempo: 4.43s | Orden: replace_node, move_node_backward, insert_move, swap_move, two_opt_move, move_node_forward, remove_move
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 44 NODOS
+01) Score: 116956.25 | Tiempo: 3.72s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward
+02) Score: 116956.25 | Tiempo: 3.65s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, move_node_backward, two_opt_move
+03) Score: 116814.90 | Tiempo: 3.70s | Orden: remove_move, replace_node, swap_move, move_node_forward, insert_move, two_opt_move, move_node_backward
+04) Score: 116814.90 | Tiempo: 3.64s | Orden: remove_move, replace_node, swap_move, move_node_forward, insert_move, move_node_backward, two_opt_move
+05) Score: 116796.65 | Tiempo: 3.49s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, two_opt_move, move_node_backward
+06) Score: 116796.65 | Tiempo: 3.48s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, move_node_backward, two_opt_move
+07) Score: 116796.65 | Tiempo: 3.48s | Orden: replace_node, swap_move, insert_move, move_node_forward, remove_move, two_opt_move, move_node_backward
+08) Score: 116796.65 | Tiempo: 3.66s | Orden: replace_node, swap_move, insert_move, move_node_forward, remove_move, move_node_backward, two_opt_move
+09) Score: 116796.65 | Tiempo: 3.50s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, remove_move, move_node_backward
+10) Score: 116796.65 | Tiempo: 3.47s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward, remove_move
+11) Score: 116796.65 | Tiempo: 3.43s | Orden: replace_node, swap_move, insert_move, move_node_forward, move_node_backward, remove_move, two_opt_move
+12) Score: 116796.65 | Tiempo: 3.42s | Orden: replace_node, swap_move, insert_move, move_node_forward, move_node_backward, two_opt_move, remove_move
+13) Score: 116637.85 | Tiempo: 3.92s | Orden: remove_move, replace_node, swap_move, move_node_forward, two_opt_move, insert_move, move_node_backward
+14) Score: 116566.05 | Tiempo: 3.83s | Orden: replace_node, remove_move, move_node_backward, swap_move, move_node_forward, insert_move, two_opt_move
+15) Score: 116566.05 | Tiempo: 3.80s | Orden: replace_node, move_node_backward, swap_move, remove_move, move_node_forward, insert_move, two_opt_move
+16) Score: 116499.80 | Tiempo: 3.82s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move
+17) Score: 116499.80 | Tiempo: 3.77s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, swap_move, insert_move, two_opt_move
+18) Score: 116499.80 | Tiempo: 3.76s | Orden: replace_node, move_node_backward, move_node_forward, swap_move, remove_move, insert_move, two_opt_move
+19) Score: 116499.80 | Tiempo: 3.72s | Orden: replace_node, move_node_backward, move_node_forward, remove_move, swap_move, insert_move, two_opt_move
+20) Score: 116458.45 | Tiempo: 4.06s | Orden: remove_move, replace_node, move_node_backward, swap_move, move_node_forward, insert_move, two_opt_move
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 53 NODOS
+01) Score: 141883.95 | Tiempo: 21.25s | Orden: replace_node, remove_move, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+02) Score: 141790.15 | Tiempo: 20.53s | Orden: replace_node, move_node_backward, insert_move, remove_move, move_node_forward, swap_move, two_opt_move
+03) Score: 141790.15 | Tiempo: 20.55s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, remove_move, two_opt_move
+04) Score: 141790.15 | Tiempo: 20.41s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move, remove_move
+05) Score: 141790.15 | Tiempo: 20.44s | Orden: replace_node, move_node_backward, insert_move, move_node_forward, remove_move, swap_move, two_opt_move
+06) Score: 141790.15 | Tiempo: 20.49s | Orden: replace_node, move_node_backward, remove_move, insert_move, move_node_forward, swap_move, two_opt_move
+07) Score: 141788.60 | Tiempo: 23.15s | Orden: remove_move, replace_node, move_node_backward, insert_move, move_node_forward, swap_move, two_opt_move
+08) Score: 141764.35 | Tiempo: 24.13s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+09) Score: 141764.35 | Tiempo: 22.74s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+10) Score: 141743.15 | Tiempo: 23.88s | Orden: replace_node, remove_move, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+11) Score: 141702.00 | Tiempo: 23.90s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, two_opt_move, move_node_forward
+12) Score: 141702.00 | Tiempo: 22.42s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, move_node_forward, two_opt_move
+13) Score: 141702.00 | Tiempo: 23.91s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, remove_move, move_node_forward
+14) Score: 141702.00 | Tiempo: 23.92s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward, remove_move
+15) Score: 141702.00 | Tiempo: 23.54s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, remove_move, two_opt_move
+16) Score: 141702.00 | Tiempo: 22.34s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move, remove_move
+17) Score: 141702.00 | Tiempo: 23.94s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, two_opt_move, move_node_forward
+18) Score: 141702.00 | Tiempo: 22.58s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, move_node_forward, two_opt_move
+19) Score: 141702.00 | Tiempo: 25.34s | Orden: replace_node, move_node_backward, swap_move, remove_move, two_opt_move, insert_move, move_node_forward
+20) Score: 141702.00 | Tiempo: 24.32s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, insert_move, remove_move, move_node_forward
+
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 70 NODOS
+01) Score: 167418.70 | Tiempo: 33.40s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, two_opt_move, move_node_backward
+02) Score: 167407.55 | Tiempo: 36.72s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward
+03) Score: 167339.00 | Tiempo: 28.86s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, insert_move, swap_move, two_opt_move
+04) Score: 167339.00 | Tiempo: 28.61s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move
+05) Score: 167339.00 | Tiempo: 28.53s | Orden: remove_move, replace_node, move_node_backward, move_node_forward, swap_move, two_opt_move, insert_move
+06) Score: 167339.00 | Tiempo: 35.72s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, insert_move, swap_move, two_opt_move
+07) Score: 167339.00 | Tiempo: 33.33s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, swap_move, insert_move, two_opt_move
+08) Score: 167339.00 | Tiempo: 28.48s | Orden: replace_node, remove_move, move_node_backward, move_node_forward, swap_move, two_opt_move, insert_move
+09) Score: 167329.80 | Tiempo: 32.57s | Orden: replace_node, swap_move, insert_move, move_node_forward, remove_move, two_opt_move, move_node_backward
+10) Score: 167329.80 | Tiempo: 31.84s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, remove_move, move_node_backward
+11) Score: 167329.80 | Tiempo: 31.61s | Orden: replace_node, swap_move, insert_move, move_node_forward, two_opt_move, move_node_backward, remove_move
+12) Score: 167313.65 | Tiempo: 32.37s | Orden: remove_move, replace_node, swap_move, move_node_forward, insert_move, two_opt_move, move_node_backward
+13) Score: 167313.65 | Tiempo: 32.12s | Orden: remove_move, replace_node, swap_move, move_node_forward, two_opt_move, insert_move, move_node_backward
+14) Score: 167313.65 | Tiempo: 31.08s | Orden: remove_move, replace_node, swap_move, move_node_forward, two_opt_move, move_node_backward, insert_move
+15) Score: 167305.00 | Tiempo: 30.66s | Orden: replace_node, swap_move, insert_move, remove_move, move_node_forward, move_node_backward, two_opt_move
+16) Score: 167293.85 | Tiempo: 34.31s | Orden: remove_move, replace_node, swap_move, insert_move, move_node_forward, move_node_backward, two_opt_move
+17) Score: 167247.65 | Tiempo: 28.43s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, insert_move, swap_move, two_opt_move
+18) Score: 167247.65 | Tiempo: 27.37s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, swap_move, insert_move, two_opt_move
+19) Score: 167247.65 | Tiempo: 28.13s | Orden: replace_node, move_node_backward, remove_move, move_node_forward, swap_move, two_opt_move, insert_move
+20) Score: 167247.65 | Tiempo: 28.67s | Orden: replace_node, move_node_backward, move_node_forward, insert_move, swap_move, remove_move, two_opt_move
+
+LOS 20 MEJORES MOVIMIENTOS PARA 20 USUARIOS EN 124 NODOS
+01) Score: 204567.65 | Tiempo: 28.15s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+02) Score: 204567.65 | Tiempo: 28.17s | Orden: remove_move, replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+03) Score: 204567.65 | Tiempo: 29.21s | Orden: remove_move, replace_node, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+04) Score: 204567.65 | Tiempo: 28.22s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward
+05) Score: 204567.65 | Tiempo: 28.10s | Orden: replace_node, remove_move, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move
+06) Score: 204567.65 | Tiempo: 29.27s | Orden: replace_node, remove_move, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward
+07) Score: 204567.65 | Tiempo: 28.08s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, two_opt_move, move_node_forward
+08) Score: 204567.65 | Tiempo: 29.22s | Orden: replace_node, move_node_backward, swap_move, insert_move, remove_move, move_node_forward, two_opt_move
+09) Score: 204567.65 | Tiempo: 28.08s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, remove_move, move_node_forward
+10) Score: 204567.65 | Tiempo: 28.09s | Orden: replace_node, move_node_backward, swap_move, insert_move, two_opt_move, move_node_forward, remove_move
+11) Score: 204567.65 | Tiempo: 28.12s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, remove_move, two_opt_move
+12) Score: 204567.65 | Tiempo: 28.14s | Orden: replace_node, move_node_backward, swap_move, insert_move, move_node_forward, two_opt_move, remove_move
+13) Score: 204567.65 | Tiempo: 28.17s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, two_opt_move, move_node_forward
+14) Score: 204567.65 | Tiempo: 28.15s | Orden: replace_node, move_node_backward, swap_move, remove_move, insert_move, move_node_forward, two_opt_move
+15) Score: 204567.65 | Tiempo: 29.17s | Orden: replace_node, move_node_backward, swap_move, remove_move, two_opt_move, insert_move, move_node_forward
+16) Score: 204567.65 | Tiempo: 29.05s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, insert_move, remove_move, move_node_forward
+17) Score: 204567.65 | Tiempo: 29.03s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, insert_move, move_node_forward, remove_move
+18) Score: 204567.65 | Tiempo: 29.44s | Orden: replace_node, move_node_backward, swap_move, two_opt_move, remove_move, insert_move, move_node_forward
+19) Score: 204567.65 | Tiempo: 28.01s | Orden: replace_node, move_node_backward, remove_move, swap_move, insert_move, two_opt_move, move_node_forward
+20) Score: 204567.65 | Tiempo: 28.21s | Orden: replace_node, move_node_backward, remove_move, swap_move, insert_move, move_node_forward, two_opt_move
+
+
