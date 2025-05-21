@@ -326,6 +326,81 @@ def swap_move(route: List[int], instance_data: InstanceData, user_data: UserData
     return best_route, best_score, best_time, best_move_found
 
 
+def two_opt_move(route: List[int], instance_data: InstanceData, user_data: UserData,
+                 best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+    best_route = route
+    best_move_found = False
+
+    for i in range(1, len(route) - 1):
+        for j in range(i + 1, len(route)):
+            new_route = route[:i] + route[i:j+1][::-1] + route[j+1:]
+            new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
+            if new_score > best_score and new_time <= user_data.totalTime:
+                best_score = new_score
+                best_time = new_time
+                best_route = new_route
+                best_move_found = True
+    return best_route, best_score, best_time, best_move_found
+
+
+def move_node_forward(route: List[int], instance_data: InstanceData, user_data: UserData,
+                      best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+    best_route = route
+    best_move_found = False
+
+    for i in range(2, len(route)):  # solo mover desde posición 2 en adelante
+        for j in range(1, i):
+            new_route = route[:]
+            node = new_route.pop(i)
+            new_route.insert(j, node)
+            new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
+            if new_score > best_score and new_time <= user_data.totalTime:
+                best_score = new_score
+                best_time = new_time
+                best_route = new_route
+                best_move_found = True
+    return best_route, best_score, best_time, best_move_found
+
+
+def move_node_backward(route: List[int], instance_data: InstanceData, user_data: UserData,
+                       best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+    best_route = route
+    best_move_found = False
+
+    for i in range(1, len(route) - 1):
+        for j in range(i + 1, len(route)):
+            new_route = route[:]
+            node = new_route.pop(i)
+            new_route.insert(j, node)
+            new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
+            if new_score > best_score and new_time <= user_data.totalTime:
+                best_score = new_score
+                best_time = new_time
+                best_route = new_route
+                best_move_found = True
+    return best_route, best_score, best_time, best_move_found
+
+
+def replace_node(route: List[int], instance_data: InstanceData, user_data: UserData,
+                 best_score: int, best_time: int) -> Tuple[List[int], int, int, bool]:
+    best_route = route
+    best_move_found = False
+
+    for i in range(1, len(route)):
+        for candidate in range(instance_data.numNodes):
+            if candidate not in route:
+                new_route = route[:]
+                new_route[i] = candidate
+                new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
+                if new_score > best_score and new_time <= user_data.totalTime:
+                    best_score = new_score
+                    best_time = new_time
+                    best_route = new_route
+                    best_move_found = True
+    return best_route, best_score, best_time, best_move_found
+
+
+
 
 def hill_climbing(solution: Solution, instance_data: InstanceData, user_data: UserData, moves: List[Callable]) -> Solution:
     """

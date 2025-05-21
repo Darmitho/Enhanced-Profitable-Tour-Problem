@@ -32,14 +32,23 @@ if __name__ == "__main__":
         initial_solutions.append(initial_solution)
 
         #Hill Climbing
-        selected_moves = [f.insert_move, f.remove_move, f.swap_move]
+        selected_moves = [
+                            f.insert_move,
+                            f.remove_move,
+                            f.swap_move,
+                            #f.two_opt_move,
+                            #f.move_node_forward,
+                            #f.move_node_backward,
+                            #f.replace_node
+                        ]
         improved_solution = f.hill_climbing(initial_solution, instance_data, user_data, selected_moves)
         
         #print(f"  Tiempo usado: {improved_solution.totalTimeUsed}")
-        print(f"Valor/Puntaje final del Tour: {improved_solution.totalScore}")
-        print(f"Tiempo disponible, Tiempo del Tour: {user_data.totalTime, improved_solution.totalTimeUsed}")
-        print(f"Nodos pertenecientes al Tour, en orden: {improved_solution.orderNodesVisited} \n \n")
+        #print(f"Valor/Puntaje final del Tour: {improved_solution.totalScore}")
+        #print(f"Tiempo disponible, Tiempo del Tour: {user_data.totalTime, improved_solution.totalTimeUsed}")
+        #print(f"Nodos pertenecientes al Tour, en orden: {improved_solution.orderNodesVisited} \n \n")
 
+        print(f"{improved_solution.totalScore}")
     fin = time.time()
 
     print(f"Tiempo total de ejecución: {fin - inicio:.2f} segundos")
