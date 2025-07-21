@@ -18,3 +18,7 @@ python test_order_first_improvement.py instances/44_instancia instances/20us_44_
 python test_order_first_improvement.py instances/53_instancia instances/20us_53_instancia 1000
 python test_order_first_improvement.py instances/70_instancia instances/20us_70_instancia 1000
 python test_order_first_improvement.py instances/124_instancia instances/20us_124_instancia 1000
+
+
+python grid_search_sa.py instances/17_instancia instances/40us_17_instancia 3
+python analytics.py instances/17_instancia instances/40us_17_instancia

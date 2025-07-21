@@ -2,7 +2,11 @@ import numpy as np
 from dataclasses import dataclass
 from typing import Callable, Tuple, List
 import sys
+import random
+from collections import deque
 from models import UserData, InstanceData, Solution
+import random
+
 
 def read_instance_file(filename: str) -> InstanceData:
     """
@@ -93,6 +97,38 @@ def read_user_data_file(filename: str, num_nodes: int) -> List[UserData]:
     except Exception as e:
         print(f"Error al leer el archivo de usuarios: {e}")
         sys.exit(1)
+
+def extract_user_features(user_data: UserData, instance_data: InstanceData) -> dict:
+    """
+    Extrae características del usuario para análisis.
+
+    Args:
+    - user_data: instancia UserData.
+    - instance_data: datos de la instancia (para calcular densidad de arcos).
+
+    Return:
+    - Diccionario con características del usuario.
+    """
+    node_scores = user_data.nodePreferences
+    arc_scores = user_data.arcPreferences
+
+    arc_validos = arc_scores[arc_scores != -1]
+
+    # Densidad de arcos de la instancia, no del usuario
+    arc_instancia = instance_data.arcTimes
+    densidad_instancia = np.count_nonzero(arc_instancia != -1) / arc_instancia.size
+
+    return {
+        "total_time": user_data.totalTime,
+        "avg_node_score": int(np.mean(node_scores)),
+        "std_node_score": int(np.std(node_scores)),
+        "max_node_score": np.max(node_scores),
+        "min_node_score": np.min(node_scores),
+        "score_range": np.max(node_scores) - np.min(node_scores),
+        "avg_arc_score": int(np.mean(arc_validos)),
+        "std_arc_score": int(np.std(arc_validos)),
+        "density_arcs": round(densidad_instancia, 3)
+    }
 
 def search_node(node: int, order_nodes_visited: List[int]) -> bool:
     """
@@ -501,3 +537,151 @@ def hill_climbing_first_improvement(solution: Solution, instance_data: InstanceD
                 break  # Reinicia desde el primer movimiento
 
     return solution, list_moves_found
+
+
+def simulated_annealing(solution: Solution,
+                        instance_data: InstanceData,
+                        user_data: UserData,
+                        moves: List[Callable],
+                        initial_temperature: float = 100.0,
+                        cooling_rate: float = 0.995,
+                        min_temperature: float = 1e-3,
+                        max_iterations: int = 1000) -> Tuple[Solution, List[str]]:
+    """
+    Ejecuta el algoritmo Simulated Annealing sobre una solución dada.
+
+    Retorna:
+    - Tupla con la mejor solución encontrada y lista de movimientos que causaron mejoras.
+    """
+    current_solution = solution
+    best_solution = solution
+    move_history = []
+
+    current_temp = initial_temperature
+    iteration = 0
+
+    while current_temp > min_temperature and iteration < max_iterations:
+        move = random.choice(moves)
+        new_route, new_score, new_time, improved = move(
+            current_solution.orderNodesVisited,
+            instance_data,
+            user_data,
+            current_solution.totalScore,
+            current_solution.totalTimeUsed,
+            first_improvement=True  # se usa estilo de alguna mejora
+        )
+
+        if improved:
+            delta = new_score - current_solution.totalScore
+            if delta > 0 or random.random() < np.exp(delta / current_temp):
+                current_solution.orderNodesVisited = new_route
+                current_solution.totalScore = new_score
+                current_solution.totalTimeUsed = new_time
+                move_history.append(move.__name__)
+                if new_score > best_solution.totalScore:
+                    best_solution = current_solution
+
+        current_temp *= cooling_rate
+        iteration += 1
+
+    return best_solution, move_history
+
+
+def tabu_search(solution: Solution,
+                instance_data: InstanceData,
+                user_data: UserData,
+                moves: List[Callable],
+                max_iterations: int = 100,
+                tabu_tenure: int = 10,
+                max_no_improve: int = 20,
+                verbose: bool = False) -> Tuple[Solution, List[str]]:
+    """
+    Ejecuta el algoritmo Tabu Search.
+
+    Args:
+    - solution: solución inicial.
+    - instance_data: datos de la instancia.
+    - user_data: preferencias del usuario.
+    - moves: lista de funciones de movimiento.
+    - max_iterations: número máximo de iteraciones.
+    - tabu_tenure: número de iteraciones que una solución permanece en la lista tabu.
+    - max_no_improve: número máximo de iteraciones sin mejora antes de detener.
+    - verbose: si es True, imprime información detallada por consola.
+
+    Return:
+    - Mejor solución encontrada y lista de movimientos aplicados.
+    """
+    current_solution = Solution(
+        orderNodesVisited=solution.orderNodesVisited[:],
+        totalScore=solution.totalScore,
+        totalTimeUsed=solution.totalTimeUsed
+    )
+    best_solution = current_solution
+    tabu_list = deque(maxlen=tabu_tenure)
+    move_history = []
+
+    no_improve_count = 0
+    iteration = 0
+
+    while iteration < max_iterations and no_improve_count < max_no_improve:
+        best_candidate = None
+        best_candidate_score = -1
+        best_candidate_move = None
+
+        if verbose:
+            print(f"\n--- Iteración {iteration} ---")
+            print(f"Score actual: {current_solution.totalScore} | Mejor global: {best_solution.totalScore}")
+
+        for move in moves:
+            candidate_route, candidate_score, candidate_time, move_found = move(
+                current_solution.orderNodesVisited,
+                instance_data,
+                user_data,
+                current_solution.totalScore,
+                current_solution.totalTimeUsed
+            )
+
+            if not move_found:
+                continue
+
+            # Mostrar el mejor vecino por tipo de movimiento
+            if verbose:
+                print(f"Vecino generado con {move.__name__}: score={candidate_score}")
+
+            # Aplicar criterios Tabú y global
+            is_tabu = candidate_route in tabu_list
+            improves_best = candidate_score > best_solution.totalScore
+
+            if is_tabu and not improves_best:
+                continue
+
+            if candidate_score > best_candidate_score and candidate_time <= user_data.totalTime:
+                best_candidate = Solution(candidate_route, candidate_score, candidate_time)
+                best_candidate_score = candidate_score
+                best_candidate_move = move.__name__
+
+        if best_candidate is not None:
+            current_solution = best_candidate
+            tabu_list.append(best_candidate.orderNodesVisited)
+            move_history.append(best_candidate_move)
+
+            if verbose:
+                print(f"Aplicando movimiento: {best_candidate_move}")
+                print(f"Nuevo score actual: {current_solution.totalScore}")
+                print(f"Lista Tabú actual: {list(tabu_list)}")
+
+            if current_solution.totalScore > best_solution.totalScore:
+                best_solution = current_solution
+                no_improve_count = 0
+                if verbose:
+                    print("¡Nueva mejor solución encontrada!")
+            else:
+                no_improve_count += 1
+        else:
+            if verbose:
+                print("No se encontraron vecinos válidos. Aumentando contador de no mejora.")
+            no_improve_count += 1
+
+        iteration += 1
+
+    return best_solution, move_history

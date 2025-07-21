@@ -29,23 +29,27 @@ if __name__ == "__main__":
     total_score = 0
 
     for user_index, user_data in enumerate(user_data_list):
-        initial_solution = f.generate_solution(instance_data, user_data)
-        initial_solutions.append(initial_solution)
+        if user_index == 31:
+            initial_solution = f.generate_solution(instance_data, user_data)
+            initial_solutions.append(initial_solution)
 
-        #Hill Climbing
-        #selected_moves = [f.insert_move, f.remove_move, f.swap_move] #original
-        #selected_moves = [f.insert_move, f.swap_move, f.two_opt_move, f.move_node_forward, f.move_node_backward, f.replace_node] #best_improvement
-        selected_moves = [f.replace_node, f.move_node_backward, f.swap_move, f.insert_move, f.move_node_forward] #first_improvement
-        
-        #improved_solution, list_moves_found = f.hill_climbing(initial_solution, instance_data, user_data, selected_moves)
-        improved_solution, list_moves_found = f.hill_climbing_first_improvement(initial_solution, instance_data, user_data, selected_moves)
-    
-        print(f"Valor/Puntaje final del Tour: {improved_solution.totalScore}")
-        print(f"Tiempo disponible, Tiempo del Tour: {user_data.totalTime, improved_solution.totalTimeUsed}")
-        print(f"Nodos pertenecientes al Tour, en orden: {improved_solution.orderNodesVisited} \n \n")
+            #Hill Climbing
+            #selected_moves = [f.insert_move, f.remove_move, f.swap_move] #original
+            selected_moves = [f.insert_move, f.swap_move, f.two_opt_move, f.move_node_forward, f.move_node_backward, f.replace_node] #best_improvement
+            #selected_moves = [f.replace_node, f.move_node_backward, f.swap_move, f.insert_move, f.move_node_forward] #first_improvement
+            #selected_moves = [f.replace_node, f.remove_move, f.move_node_backward,  f.move_node_forward, f.swap_move, f.insert_move, f.two_opt_move]
 
-        #print(list_moves_found)
-        total_score += improved_solution.totalScore
+            #improved_solution, list_moves_found = f.hill_climbing(initial_solution, instance_data, user_data, selected_moves)
+            #improved_solution, list_moves_found = f.hill_climbing_first_improvement(initial_solution, instance_data, user_data, selected_moves)
+            #improved_solution, list_moves_found = f.simulated_annealing(initial_solution, instance_data, user_data, selected_moves, initial_temperature=10, cooling_rate=0.99, min_temperature=1, max_iterations=iterations)
+            improved_solution, list_moves_found = f.tabu_search(initial_solution, instance_data, user_data, selected_moves, max_iterations=iterations, verbose=True)
+
+            #print(f"Valor/Puntaje final del Tour: {improved_solution.totalScore}")
+            #print(f"Tiempo disponible, Tiempo del Tour: {user_data.totalTime, improved_solution.totalTimeUsed}")
+            #print(f"Nodos pertenecientes al Tour, en orden: {improved_solution.orderNodesVisited} \n \n")
+            print(list_moves_found)
+            
+            total_score += improved_solution.totalScore
     fin = time.time()
     print(f"Promedio de puntaje: {total_score / len(user_data_list)}")
     print(f"Tiempo total de ejecución: {fin - inicio:.2f}[s]")
