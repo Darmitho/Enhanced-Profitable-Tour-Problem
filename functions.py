@@ -285,20 +285,32 @@ def insert_move(route: List[int], instance_data: InstanceData, user_data: UserDa
     """
     best_route = route
     best_move_found = False
+    best_generated_score = float('-inf')
+    best_generated_time = float('inf')
+    best_generated_route = route
 
     for i in range(1, len(route)):
         for node in range(instance_data.numNodes):
             if node not in route:
                 new_route = route[:i] + [node] + route[i:]
                 new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
-                if new_score > best_score and new_time <= user_data.totalTime:
-                    best_score = new_score
-                    best_time = new_time
-                    best_route = new_route
-                    best_move_found = True
-                    if first_improvement:
-                        return best_route, best_score, best_time, True
-    return best_route, best_score, best_time, best_move_found
+
+                if new_time != np.iinfo(np.int32).max and new_time <= user_data.totalTime:
+
+                    # Para first improvement, salir en cuanto mejora la original
+                    if first_improvement and new_score > best_score:
+                        return new_route, new_score, new_time, True
+
+                    if new_score > best_generated_score or \
+                       (new_score == best_generated_score and new_time < best_generated_time):
+                        best_generated_score = new_score
+                        best_generated_time = new_time
+                        best_generated_route = new_route
+
+                        if new_score > best_score:
+                            best_move_found = True
+
+    return best_generated_route, best_generated_score, best_generated_time, best_move_found
 
 
 def remove_move(route: List[int], instance_data: InstanceData, user_data: UserData,
@@ -321,18 +333,30 @@ def remove_move(route: List[int], instance_data: InstanceData, user_data: UserDa
     """
     best_route = route
     best_move_found = False
+    best_generated_score = float('-inf')
+    best_generated_time = float('inf')
+    best_generated_route = route
 
     for i in range(1, len(route)):
         new_route = route[:i] + route[i+1:]
         new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
-        if new_score > best_score and new_time <= user_data.totalTime:
-            best_score = new_score
-            best_time = new_time
-            best_route = new_route
-            best_move_found = True
-            if first_improvement:
-                return best_route, best_score, best_time, True
-    return best_route, best_score, best_time, best_move_found
+
+        if new_time != np.iinfo(np.int32).max and new_time <= user_data.totalTime:
+
+            # Para first improvement, salir en cuanto mejora la original
+            if first_improvement and new_score > best_score:
+                return new_route, new_score, new_time, True
+
+            if new_score > best_generated_score or \
+               (new_score == best_generated_score and new_time < best_generated_time):
+                best_generated_score = new_score
+                best_generated_time = new_time
+                best_generated_route = new_route
+
+                if new_score > best_score:
+                    best_move_found = True
+
+    return best_generated_route, best_generated_score, best_generated_time, best_move_found
 
 
 def swap_move(route: List[int], instance_data: InstanceData, user_data: UserData,
@@ -355,47 +379,102 @@ def swap_move(route: List[int], instance_data: InstanceData, user_data: UserData
     """
     best_route = route
     best_move_found = False
+    best_generated_score = float('-inf')
+    best_generated_time = float('inf')
+    best_generated_route = route
 
     for i in range(1, len(route)):
         for j in range(i + 1, len(route)):
             new_route = route[:]
             new_route[i], new_route[j] = new_route[j], new_route[i]
             new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
-            if new_score > best_score and new_time <= user_data.totalTime:
-                best_score = new_score
-                best_time = new_time
-                best_route = new_route
-                best_move_found = True
-                if first_improvement:
-                    return best_route, best_score, best_time, True
-    return best_route, best_score, best_time, best_move_found
+
+            if new_time != np.iinfo(np.int32).max and new_time <= user_data.totalTime:
+
+                # Para first improvement, salir en cuanto mejora la original
+                if first_improvement and new_score > best_score:
+                    return new_route, new_score, new_time, True
+
+                if new_score > best_generated_score or \
+                   (new_score == best_generated_score and new_time < best_generated_time):
+                    best_generated_score = new_score
+                    best_generated_time = new_time
+                    best_generated_route = new_route
+
+                    if new_score > best_score:
+                        best_move_found = True
+
+    return best_generated_route, best_generated_score, best_generated_time, best_move_found
 
 
-def two_opt_move(route: List[int], instance_data: InstanceData, user_data: UserData,
-                best_score: int, best_time: int, first_improvement: bool = False
-               ) -> Tuple[List[int], int, int, bool]:
+def two_opt_move(route: List[int], instance_data, user_data,
+                 best_score: int, best_time: int, first_improvement: bool = False
+                ) -> Tuple[List[int], int, int, bool]:
+    """
+    Realiza un movimiento 2-opt invirtiendo un segmento de la ruta.
+
+    Args:
+    - route: Ruta actual.
+    - instance_data: Datos del grafo.
+    - user_data: Preferencias del usuario.
+    - best_score: Mejor puntuación de la ruta original.
+    - best_time: Tiempo de la ruta original.
+    - first_improvement: Si es True, retorna en cuanto encuentra una mejor solución.
+
+    Return:
+    - mejor ruta generada, puntuación, tiempo y si mejora a la original.
+    """
     best_route = route
     best_move_found = False
+    best_generated_score = float('-inf')
+    best_generated_time = float('inf')
+    best_generated_route = route
 
     for i in range(1, len(route) - 1):
         for j in range(i + 1, len(route)):
             new_route = route[:i] + route[i:j+1][::-1] + route[j+1:]
             new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
-            if new_score > best_score and new_time <= user_data.totalTime:
-                best_score = new_score
-                best_time = new_time
-                best_route = new_route
-                best_move_found = True
-                if first_improvement:
-                    return best_route, best_score, best_time, True
-    return best_route, best_score, best_time, best_move_found
+
+            if new_time != np.iinfo(np.int32).max and new_time <= user_data.totalTime:
+
+                # Para first improvement, salir en cuanto mejora la original
+                if first_improvement and new_score > best_score:
+                    return new_route, new_score, new_time, True
+
+                if new_score > best_generated_score or \
+                   (new_score == best_generated_score and new_time < best_generated_time):
+                    best_generated_score = new_score
+                    best_generated_time = new_time
+                    best_generated_route = new_route
+
+                    if new_score > best_score:
+                        best_move_found = True
+
+    return best_generated_route, best_generated_score, best_generated_time, best_move_found
 
 
 def move_node_forward(route: List[int], instance_data: InstanceData, user_data: UserData,
                 best_score: int, best_time: int, first_improvement: bool = False
                ) -> Tuple[List[int], int, int, bool]:
+    """
+    Realiza un movimiento de adelantamiento de un nodo en la ruta (mover nodo hacia una posición anterior).
+
+    Args:
+    - route: Ruta actual.
+    - instance_data: Datos del grafo.
+    - user_data: Preferencias del usuario.
+    - best_score: Mejor puntuación de la ruta original.
+    - best_time: Tiempo de la ruta original.
+    - first_improvement: Si es True, retorna en cuanto encuentra una mejor solución.
+
+    Return:
+    - mejor ruta generada, puntuación, tiempo y si mejora a la original.
+    """
     best_route = route
     best_move_found = False
+    best_generated_score = float('-inf')
+    best_generated_time = float('inf')
+    best_generated_route = route
 
     for i in range(2, len(route)):  # solo mover desde posición 2 en adelante
         for j in range(1, i):
@@ -403,21 +482,47 @@ def move_node_forward(route: List[int], instance_data: InstanceData, user_data: 
             node = new_route.pop(i)
             new_route.insert(j, node)
             new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
-            if new_score > best_score and new_time <= user_data.totalTime:
-                best_score = new_score
-                best_time = new_time
-                best_route = new_route
-                best_move_found = True
-                if first_improvement:
-                    return best_route, best_score, best_time, True
-    return best_route, best_score, best_time, best_move_found
+
+            if new_time != np.iinfo(np.int32).max and new_time <= user_data.totalTime:
+
+                # Para first improvement, salir en cuanto mejora la original
+                if first_improvement and new_score > best_score:
+                    return new_route, new_score, new_time, True
+
+                if new_score > best_generated_score or \
+                   (new_score == best_generated_score and new_time < best_generated_time):
+                    best_generated_score = new_score
+                    best_generated_time = new_time
+                    best_generated_route = new_route
+
+                    if new_score > best_score:
+                        best_move_found = True
+
+    return best_generated_route, best_generated_score, best_generated_time, best_move_found
 
 
-def move_node_backward(route: List[int], instance_data: InstanceData, user_data: UserData,
-                best_score: int, best_time: int, first_improvement: bool = False
-               ) -> Tuple[List[int], int, int, bool]:
+def move_node_backward(route: List[int], instance_data, user_data,
+                       best_score: int, best_time: int, first_improvement: bool = False
+                      ) -> Tuple[List[int], int, int, bool]:
+    """
+    Mueve un nodo hacia una posición posterior en la ruta.
+
+    Args:
+    - route: Ruta actual.
+    - instance_data: Datos del grafo.
+    - user_data: Preferencias del usuario.
+    - best_score: Mejor puntuación de la ruta original.
+    - best_time: Tiempo de la ruta original.
+    - first_improvement: Si es True, retorna en cuanto encuentra una mejor solución.
+
+    Return:
+    - mejor ruta generada, puntuación, tiempo y si mejora a la original.
+    """
     best_route = route
     best_move_found = False
+    best_generated_score = float('-inf')
+    best_generated_time = float('inf')
+    best_generated_route = route
 
     for i in range(1, len(route) - 1):
         for j in range(i + 1, len(route)):
@@ -425,21 +530,47 @@ def move_node_backward(route: List[int], instance_data: InstanceData, user_data:
             node = new_route.pop(i)
             new_route.insert(j, node)
             new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
-            if new_score > best_score and new_time <= user_data.totalTime:
-                best_score = new_score
-                best_time = new_time
-                best_route = new_route
-                best_move_found = True
-                if first_improvement:
-                    return best_route, best_score, best_time, True
-    return best_route, best_score, best_time, best_move_found
+
+            if new_time != np.iinfo(np.int32).max and new_time <= user_data.totalTime:
+
+                # Para first improvement, salir en cuanto mejora la original
+                if first_improvement and new_score > best_score:
+                    return new_route, new_score, new_time, True
+
+                if new_score > best_generated_score or \
+                   (new_score == best_generated_score and new_time < best_generated_time):
+                    best_generated_score = new_score
+                    best_generated_time = new_time
+                    best_generated_route = new_route
+
+                    if new_score > best_score:
+                        best_move_found = True
+
+    return best_generated_route, best_generated_score, best_generated_time, best_move_found
 
 
-def replace_node(route: List[int], instance_data: InstanceData, user_data: UserData,
-                best_score: int, best_time: int, first_improvement: bool = False
-               ) -> Tuple[List[int], int, int, bool]:
+def replace_node(route: List[int], instance_data, user_data,
+                 best_score: int, best_time: int, first_improvement: bool = False
+                ) -> Tuple[List[int], int, int, bool]:
+    """
+    Reemplaza un nodo de la ruta por otro nodo no presente en la ruta.
+
+    Args:
+    - route: Ruta actual.
+    - instance_data: Datos del grafo.
+    - user_data: Preferencias del usuario.
+    - best_score: Mejor puntuación de la ruta original.
+    - best_time: Tiempo de la ruta original.
+    - first_improvement: Si es True, retorna en cuanto encuentra una mejor solución.
+
+    Return:
+    - mejor ruta generada, puntuación, tiempo y si mejora a la original.
+    """
     best_route = route
     best_move_found = False
+    best_generated_score = float('-inf')
+    best_generated_time = float('inf')
+    best_generated_route = route
 
     for i in range(1, len(route)):
         for candidate in range(instance_data.numNodes):
@@ -447,14 +578,24 @@ def replace_node(route: List[int], instance_data: InstanceData, user_data: UserD
                 new_route = route[:]
                 new_route[i] = candidate
                 new_time, new_score = calculate_score_and_time(instance_data, user_data, new_route)
-                if new_score > best_score and new_time <= user_data.totalTime:
-                    best_score = new_score
-                    best_time = new_time
-                    best_route = new_route
-                    best_move_found = True
-                    if first_improvement:
-                        return best_route, best_score, best_time, True
-    return best_route, best_score, best_time, best_move_found
+
+                if new_time != np.iinfo(np.int32).max and new_time <= user_data.totalTime:
+
+                    # Para first improvement, salir en cuanto mejora la original
+                    if first_improvement and new_score > best_score:
+                        return new_route, new_score, new_time, True
+
+                    if new_score > best_generated_score or \
+                       (new_score == best_generated_score and new_time < best_generated_time):
+                        best_generated_score = new_score
+                        best_generated_time = new_time
+                        best_generated_route = new_route
+
+                        if new_score > best_score:
+                            best_move_found = True
+
+    return best_generated_route, best_generated_score, best_generated_time, best_move_found
+
 
 
 
@@ -546,7 +687,9 @@ def simulated_annealing(solution: Solution,
                         initial_temperature: float = 100.0,
                         cooling_rate: float = 0.995,
                         min_temperature: float = 1e-3,
-                        max_iterations: int = 1000) -> Tuple[Solution, List[str]]:
+                        max_iterations: int = 1000,
+                        verbose: bool = False) -> Tuple[Solution, List[str]]:
+
     """
     Ejecuta el algoritmo Simulated Annealing sobre una solución dada.
 
@@ -562,24 +705,36 @@ def simulated_annealing(solution: Solution,
 
     while current_temp > min_temperature and iteration < max_iterations:
         move = random.choice(moves)
+
         new_route, new_score, new_time, improved = move(
             current_solution.orderNodesVisited,
             instance_data,
             user_data,
             current_solution.totalScore,
             current_solution.totalTimeUsed,
-            first_improvement=True  # se usa estilo de alguna mejora
+            first_improvement=True
         )
 
-        if improved:
-            delta = new_score - current_solution.totalScore
-            if delta > 0 or random.random() < np.exp(delta / current_temp):
-                current_solution.orderNodesVisited = new_route
-                current_solution.totalScore = new_score
-                current_solution.totalTimeUsed = new_time
-                move_history.append(move.__name__)
-                if new_score > best_solution.totalScore:
-                    best_solution = current_solution
+        delta = new_score - current_solution.totalScore
+        accept_move = delta > 0 or random.random() < np.exp(delta / current_temp)
+
+        if verbose:
+            print(f"Iteración {iteration}")
+            print(f"  Movimiento: {move.__name__}")
+            print(f"  Score actual: {current_solution.totalScore}, Nuevo score: {new_score}")
+            print(f"  Delta: {delta}")
+            print(f"  Temperatura: {current_temp}")
+            print(f"  Movimiento {'aceptado' if accept_move else 'rechazado'}")
+
+        if accept_move:
+            current_solution.orderNodesVisited = new_route
+            current_solution.totalScore = new_score
+            current_solution.totalTimeUsed = new_time
+            move_history.append(move.__name__)
+            if new_score > best_solution.totalScore:
+                best_solution = current_solution
+                if verbose:
+                    print("  *** ¡Mejora global encontrada! ***")
 
         current_temp *= cooling_rate
         iteration += 1
@@ -640,9 +795,6 @@ def tabu_search(solution: Solution,
                 current_solution.totalScore,
                 current_solution.totalTimeUsed
             )
-
-            if not move_found:
-                continue
 
             # Mostrar el mejor vecino por tipo de movimiento
             if verbose:

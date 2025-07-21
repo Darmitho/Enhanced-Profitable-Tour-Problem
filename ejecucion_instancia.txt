@@ -22,3 +22,4 @@ python test_order_first_improvement.py instances/124_instancia instances/20us_12
 
 python grid_search_sa.py instances/17_instancia instances/40us_17_instancia 3
 python analytics.py instances/17_instancia instances/40us_17_instancia
+python route_valid.py instances/17_instancia instances/40us_17_instancia
