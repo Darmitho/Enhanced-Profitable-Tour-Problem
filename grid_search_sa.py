@@ -72,9 +72,10 @@ if __name__ == "__main__":
     moves = [base_move] + other_moves
 
     # Parámetros del Grid Search
-    temperatures = [5, 10, 20]
-    cooling_rates = [0.985, 0.99]
+    temperatures = [80, 100, 120, 140]
+    cooling_rates = [0.99, 0.995]
     max_iterations_list = [100, 200, 300]
+
 
     param_grid = list(itertools.product(temperatures, cooling_rates, max_iterations_list))
     print(f"Ejecutando Grid Search con {len(param_grid)} combinaciones...")

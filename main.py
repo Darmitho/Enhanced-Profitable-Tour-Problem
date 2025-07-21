@@ -42,7 +42,7 @@ if __name__ == "__main__":
 
             #improved_solution, list_moves_found = f.hill_climbing(initial_solution, instance_data, user_data, selected_moves)
             #improved_solution, list_moves_found = f.hill_climbing_first_improvement(initial_solution, instance_data, user_data, selected_moves)
-            improved_solution, list_moves_found = f.simulated_annealing(initial_solution, instance_data, user_data, selected_moves, initial_temperature=10, cooling_rate=0.99, min_temperature=1, max_iterations=iterations, verbose=True)
+            improved_solution, list_moves_found = f.simulated_annealing(initial_solution, instance_data, user_data, selected_moves, initial_temperature=20, cooling_rate=0.995, min_temperature=1, max_iterations=iterations, verbose=True)
             #improved_solution, list_moves_found = f.tabu_search(initial_solution, instance_data, user_data, selected_moves, max_iterations=iterations, verbose=False)
 
             print(f"Valor/Puntaje final del Tour: {improved_solution.totalScore}")
